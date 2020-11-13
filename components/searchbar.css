@@ -17,17 +17,16 @@ body {
   border-radius: 4px;
 } */
 
-.react-autosuggest__container > .react-autosuggest__input{
-    width: 250px;
-    border-radius: .25rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: .375rem .75rem;
-    line-height: 1.5;
-    border: 1px solid #ced4da;
-    display: block;
-    height: calc(1.5em + .75rem + 2px);
-    
+.react-autosuggest__container > .react-autosuggest__input {
+  width: 250px;
+  border-radius: 0.25rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
 }
 
 .react-autosuggest__input:focus {
@@ -74,7 +73,7 @@ body {
 }
 
 .react-autosuggest__suggestion--focused {
-  background-color: #0C7EAF;
+  background-color: #0c7eaf;
   color: #fff;
 }
 
@@ -84,7 +83,6 @@ body {
   background-repeat: no-repeat;
 }
 
-
 .highlight {
   color: #ee0000;
   font-weight: bold;
@@ -92,4 +90,9 @@ body {
 
 .react-autosuggest__suggestion--focused .highlight {
   color: #120000;
+}
+
+.searchWrap {
+  margin: 0 auto;
+  width: 330px;
 }
