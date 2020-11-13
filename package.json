@@ -1,0 +1,23 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autosuggest-highlight": "^3.1.1",
+    "bootstrap": "^4.5.3",
+    "jsonpath": "^1.0.2",
+    "next": "^10.0.0",
+    "react": "^17.0.1",
+    "react-autocomplete-input": "^1.0.14",
+    "react-autosuggest": "^10.0.3",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-grid-system": "^7.1.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
