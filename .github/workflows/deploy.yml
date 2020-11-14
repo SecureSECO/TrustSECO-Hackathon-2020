@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-          working-directory: NextJSWebPortal
+        working-directory: NextJSWebPortal
       - run: npm run build
-          working-directory: NextJSWebPortal
+        working-directory: NextJSWebPortal
       - run: touch ./out/.nojekyll
-          working-directory: NextJSWebPortal
+        working-directory: NextJSWebPortal
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
