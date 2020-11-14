@@ -1,0 +1,104 @@
+{
+  "id": "js-tokens",
+  "packageName": "js-tokens",
+  "description": "Tiny JavaScript tokenizer.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lydell/js-tokens.git"
+  },
+  "readme": "# js-tokens\n\nThe tiny, regex powered, lenient, _almost_ spec-compliant JavaScript tokenizer that never fails.\n\n```js\nconst jsTokens = require(\"js-tokens\");\n\nconst jsString = 'JSON.stringify({k:3.14**2}, null /*replacer*/, \"\\\\t\")';\n\nArray.from(jsTokens(jsString), (token) => token.value).join(\"|\");\n// JSON|.|stringify|(|{|k|:|3.14|**|2|}|,| |null| |/*replacer*/|,| |\"\\t\"|)\n```\n\n**[\u27a1\ufe0f Full readme](https://github.com/lydell/js-tokens/)**",
+  "homepage": "https://github.com/lydell/js-tokens#readme",
+  "trustScore": 0,
+  "sourceRank": {
+    "basic_info_present": 1,
+    "repository_present": 1,
+    "readme_present": 1,
+    "license_present": 1,
+    "versions_present": 1,
+    "follows_semver": 1,
+    "recent_release": 0,
+    "not_brand_new": 1,
+    "one_point_oh": 1,
+    "dependent_projects": 4,
+    "dependent_repositories": 6,
+    "stars": 2,
+    "contributors": 0,
+    "subscribers": 2,
+    "all_prereleases": 0,
+    "any_outdated_dependencies": 0,
+    "is_deprecated": 0,
+    "is_unmaintained": 0,
+    "is_removed": 0,
+    "trustScore": 22
+  },
+  "versions": [
+    {
+      "versionNumber": "0.1.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "0.2.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "0.3.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "0.3.1",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "0.4.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "0.4.1",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "1.0.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "1.0.1",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "1.0.2",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "1.0.3",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "2.0.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "3.0.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "3.0.1",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "3.0.2",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "4.0.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "5.0.0",
+      "dependencies": []
+    },
+    {
+      "versionNumber": "6.0.0",
+      "dependencies": []
+    }
+  ]
+}
