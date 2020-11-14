@@ -94,7 +94,7 @@ class Version:
     dependencies.append(Dependency(packageName,Version))
 
   def calculateTrustScore(self, currentTrust):
-    randomFactor = random.normal(loc=9.0, scale = 2.0)/10
+    randomFactor = random.normal(loc=9.0, scale = 0.8)/10
     now = datetime.now()
     versionDate = datetime.strptime(self.timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
     monthsOld = abs((now - versionDate).days)/30

@@ -2,6 +2,8 @@ import requests, json, copy
 from packageData import *
 from mongo import *
 import asyncio
+import urllib
+import time
 
 #STATICS
 dataSources = {
@@ -27,7 +29,33 @@ def calculateRank(d):
   return rank
 
 #Step 1
+def initializeAnalysisOfTree(rootPackage):
+  jobStack.append(rootPackage)
+  dependencyResults = []
+
+  loop = asyncio.new_event_loop()
+  asyncio.set_event_loop(loop)
+
+  while jobStack:
+    result = popAndAnalyze()
+    time.sleep(1)
+    loop.run_until_complete(addFileAsync(result.toJSON()))
+
+  
+  #   dependencyResults.append(popAndAnalyze())
+  # return dependencyResults
+
+
+def popAndAnalyze():
+  currentPackage = jobStack.pop()
+  # print("analyzing ", currentPackage)
+  result = analyzePackage(currentPackage)
+  jobsDone.append(currentPackage)
+  return result
+
 def analyzePackage(packageID):
+  print("Analyzing ", packageID)
+  packageID =  urllib.parse.quote(packageID, safe='~()*!.\'')
   package = Package(packageID)
   package.sourceRank = getSourceRank(packageID)
   package.trustScore = package.sourceRank.trustScore
@@ -78,25 +106,13 @@ def addJob(packageName):
     if packageName not in jobsDone:
       jobStack.append(packageName)
 
-def popAndAnalyze():
-  currentPackage = jobStack.pop()
-  # print("analyzing ", currentPackage)
-  result = analyzePackage(currentPackage)
-  jobsDone.append(currentPackage)
-  return result
-
-def initializeAnalysisOfTree(rootPackage):
-  jobStack.append(rootPackage)
-  dependencyResults = []
-  while jobStack:
-    dependencyResults.append(popAndAnalyze())
-  return dependencyResults
-
 #step 5
 def getSourceRank(packageID):
   # print("getSourceRank: ", packageID)
   API = dataSources["libraries_io"]
   sourceUrl = API.replace("$packagename$", packageID)
+  # print("sourcerank: ", packageID)
+  print("url: ",sourceUrl)
   response = requests.get(sourceUrl).json()
   sourceRank = SourceRank(packageID)
   sourceRank.basic_info_present = response["basic_info_present"]
@@ -124,17 +140,16 @@ def getSourceRank(packageID):
 #############
 ###EXECUTE###
 #############
-packageTreeData = initializeAnalysisOfTree("loose-envify")
+# packageTreeData = initializeAnalysisOfTree("@ungap/promise-all-settled")
+packageTreeData = initializeAnalysisOfTree("react")
 # packageTreeData = initializeAnalysisOfTree("loose-envify")(allResults)
 # printResult(packageTreeData)
 
-for result in packageTreeData:
-  # print(f"Pushin package to MongoDB: {result.id} --- RANK: {result.sourceRank.trustScore}")
-  # addFile(result.toJSON())
-  loop = asyncio.new_event_loop()
-  asyncio.set_event_loop(loop)
-  loop.run_until_complete(addFileAsync(result.toJSON()))
-  # print("file pushed to MONGODB")
+# for result in packageTreeData:
+#   loop = asyncio.new_event_loop()
+#   asyncio.set_event_loop(loop)
+#   loop.run_until_complete(addFileAsync(result.toJSON()))
+  
 
 # result = packageTreeData[0]
 # print(f"Pushin package to MongoDB: {result.id} --- RANK: {result.sourceRank.trustScore}")
