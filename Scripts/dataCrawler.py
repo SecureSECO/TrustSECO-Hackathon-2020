@@ -1,6 +1,7 @@
 import requests, json, copy
 from packageData import *
 from mongo import *
+import asyncio
 
 #STATICS
 dataSources = {
@@ -28,8 +29,9 @@ def calculateRank(d):
 #Step 1
 def analyzePackage(packageID):
   package = Package(packageID)
-  package = getDependencyTreeData(package)
   package.sourceRank = getSourceRank(packageID)
+  package.trustScore = package.sourceRank.trustScore
+  package = getDependencyTreeData(package)
   return package
 
 #Step 2
@@ -46,7 +48,9 @@ def getDependencyTreeData(package):
   try:
     for i in response['versions']:
       try:
-        version = Version(i)
+        version = Version(i, 
+          timestamp = response['time'][i],
+          currentTrust = package.trustScore)
         version.dependencies = getDependenciesFromVersion(response['versions'][i])
         versions.append(version)
       except KeyError : ""
@@ -123,7 +127,16 @@ def getSourceRank(packageID):
 packageTreeData = initializeAnalysisOfTree("loose-envify")
 # packageTreeData = initializeAnalysisOfTree("loose-envify")(allResults)
 # printResult(packageTreeData)
+
 for result in packageTreeData:
-  print(f"Pushin package to MongoDB: {result.id} --- RANK: {result.sourceRank.trustScore}")
-  addFile(result.toJSON())#This needs to be a JSON
-  print("file pushed to MONGODB")
+  # print(f"Pushin package to MongoDB: {result.id} --- RANK: {result.sourceRank.trustScore}")
+  # addFile(result.toJSON())
+  loop = asyncio.new_event_loop()
+  asyncio.set_event_loop(loop)
+  loop.run_until_complete(addFileAsync(result.toJSON()))
+  # print("file pushed to MONGODB")
+
+# result = packageTreeData[0]
+# print(f"Pushin package to MongoDB: {result.id} --- RANK: {result.sourceRank.trustScore}")
+# addFile(result.toJSON())
+# print("file pushed to MONGODB")

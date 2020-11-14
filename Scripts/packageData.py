@@ -1,3 +1,7 @@
+from datetime import datetime
+from numpy import random
+import math
+
 class SourceRank:
   def __init__(self, id, basic_info_present = 0, repository_present = 0, readme_present = 0, license_present = 0, versions_present = 0, follows_semver = 0, recent_release = 0, not_brand_new = 0, one_point_oh = 0, dependent_projects = 0, dependent_repositories = 0, stars = 0, contributors = 0, subscribers = 0, all_prereleases = 0, any_outdated_dependencies = 0, is_deprecated = 0, is_unmaintained = 0, is_removed = 0):
     self.basic_info_present = basic_info_present
@@ -57,6 +61,7 @@ class Package:
     self.homepage = ""
     self.sourceRank = ""
     self.trustScore = 0
+    self.crawlTimestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
   
   def addVersion(versionNumber, dependencies=[], devDependencies = []):
     newVersion = Version(versionNumber, dependencies = dependencies, devDependencies = devDependencies)
@@ -65,7 +70,8 @@ class Package:
   def toJSON(self):
     return {
       "id": self.id,
-     "packageName": self.packageName,
+      "crawlTimestamp": self.crawlTimestamp,
+      "packageName": self.packageName,
   		"description": self.description,
 	  	"repository": self.repository,
 		  "readme": self.readme,
@@ -74,22 +80,34 @@ class Package:
       "sourceRank": self.sourceRank.toJSON(),
       "versions": [vers.toJSON() for vers in self.versions]
     }
-	  	# "sourceRank": self.sourceRank,
-    #,
   
 
 class Version:
-  def __init__(self, versionNumber, dependencies =[], devDependencies = []):
+  def __init__(self, versionNumber, dependencies =[], devDependencies = [], currentTrust = 0, timestamp = ""):
     self.versionNumber = versionNumber
     self.dependencies = []
     self.devDependencies = []
+    self.timestamp = timestamp
+    self.trustScore = self.calculateTrustScore(currentTrust)
   
   def addDependency(packageName, version):
     dependencies.append(Dependency(packageName,Version))
-  
+
+  def calculateTrustScore(self, currentTrust):
+    randomFactor = random.normal(loc=9.0, scale = 2.0)/10
+    now = datetime.now()
+    versionDate = datetime.strptime(self.timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
+    monthsOld = abs((now - versionDate).days)/30
+    logfactor = math.log(monthsOld,10) #log/base
+    dateFactor = min(max(logfactor, 0.3),1.1)
+    return round(currentTrust * dateFactor * randomFactor)
+
+
   def toJSON(self):
     return {
       "versionNumber": self.versionNumber,
+      "timestamp": self.timestamp,
+      "trustScore": self.trustScore,
       "dependencies": [dep.toJSON() for dep in self.dependencies]
     }
 
