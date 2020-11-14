@@ -32,9 +32,8 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
-        working-directory: NextJSWebPortal
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: out # The folder the action should deploy.
+          FOLDER: NextJSWebPortal/out # The folder the action should deploy.
           CLEAN: true
