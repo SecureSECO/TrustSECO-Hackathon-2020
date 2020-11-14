@@ -21,6 +21,30 @@ class SourceRank:
     self.is_removed = is_removed
     self.trustScore = 0
 
+  def toJSON(self):
+    return {
+		  "basic_info_present": self.basic_info_present,
+		  "repository_present": self.repository_present,
+		  "readme_present": self.readme_present,
+		  "license_present": self.license_present,
+		  "versions_present": self.versions_present,
+		  "follows_semver": self.follows_semver,
+		  "recent_release": self.recent_release,
+		  "not_brand_new": self.not_brand_new,
+		  "one_point_oh": self.one_point_oh,
+  		"dependent_projects": self.dependent_projects,
+	  	"dependent_repositories": self.dependent_repositories,
+		  "stars": self.stars,
+  		"contributors": self.contributors,
+	  	"subscribers": self.subscribers,
+		  "all_prereleases": self.all_prereleases,
+  		"any_outdated_dependencies": self.any_outdated_dependencies,
+	  	"is_deprecated": self.is_deprecated,
+		  "is_unmaintained": self.is_unmaintained,
+		  "is_removed": self.is_removed,
+	    "trustScore": self.trustScore
+    }
+
 class Package:
   def __init__(self, id):
     self.id = id
@@ -38,8 +62,20 @@ class Package:
     newVersion = Version(versionNumber, dependencies = dependencies, devDependencies = devDependencies)
     versions.append(newVersion)
   
-  def toJSON():
-    return ""
+  def toJSON(self):
+    return {
+      "id": self.id,
+     "packageName": self.packageName,
+  		"description": self.description,
+	  	"repository": self.repository,
+		  "readme": self.readme,
+  		"homepage": self.homepage,
+		  "trustScore": self.trustScore,
+      "sourceRank": self.sourceRank.toJSON(),
+      "versions": [vers.toJSON() for vers in self.versions]
+    }
+	  	# "sourceRank": self.sourceRank,
+    #,
   
 
 class Version:
@@ -50,8 +86,19 @@ class Version:
   
   def addDependency(packageName, version):
     dependencies.append(Dependency(packageName,Version))
+  
+  def toJSON(self):
+    return {
+      "versionNumber": self.versionNumber,
+      "dependencies": [dep.toJSON() for dep in self.dependencies]
+    }
 
 class Dependency:
   def __init__(self, packageName, version):
     self.packageName = packageName
     self.version = version
+  def toJSON(self):
+      return {
+        "packageName": self.packageName,
+        "version": self.version
+      }
