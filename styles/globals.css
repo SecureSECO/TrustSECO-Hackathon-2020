@@ -22,3 +22,7 @@ a {
 .row {
   margin-bottom: 10px;
 }
+
+#__next {
+  min-height: 100%;
+}

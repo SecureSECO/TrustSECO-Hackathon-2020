@@ -10,8 +10,9 @@ import {
 } from "../lib/packageData";
 import data from "../testData/data.json";
 import Searchbar from "../components/searchbar";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron } from "react-bootstrap";
 import FeaturedPackages from "../components/featuredPackages";
+import Footer from "../components/footer";
 
 export async function getStaticProps() {
   const featuredPackageData = getFeaturedData();
@@ -44,53 +45,42 @@ export default class Trust extends React.Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <Head>
-          <title>TrustSECO</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Container>
-          <Row className={styles.content}>
-            <Col
-              offset={2}
-              md={{ span: 10, offset: 1 }}
-              className={styles.contentInside}
-            >
-              <main className={styles.main}>
-                <h1 className={styles.title}>TrustSECO</h1>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <Head>
+            <title>TrustSECO</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          <Container>
+            <Row className={styles.content}>
+              <Col
+                offset={2}
+                md={{ span: 10, offset: 1 }}
+                className={styles.contentInside}
+              >
+                <main className={styles.main}>
+                  <Jumbotron className={styles.headerJumbo}>
+                    <h1 className={styles.title}>TrustSECO</h1>
 
-                <p className={styles.description}>
-                  A project by <a href="https://secureseco.org">SecureSECO</a>
-                </p>
-
-                <Row className={styles.searchRow}>
-                  <Searchbar packageNames={this.props.allPackages} />
-                </Row>
-                <div>
-                  <FeaturedPackages
-                    featuredPackageData={this.props.featuredPackageData}
-                  />
-                </div>
-              </main>
-            </Col>
-          </Row>
-          <footer className={styles.footer}>
-            <Col md={3}></Col>
-            <Col md={3}>
-              <h4>Links</h4>
-              <ul>
-                <li>Github</li>
-              </ul>
-              <ul>
-                <li>Twitter</li>
-              </ul>
-              <ul>
-                <li>LinkedIn</li>
-              </ul>
-            </Col>
-            <Col md={3}></Col>
-          </footer>
-        </Container>
+                    <p className={styles.description}>
+                      A project by{" "}
+                      <a href="https://secureseco.org">SecureSECO</a>
+                    </p>
+                  </Jumbotron>
+                  <Row className={styles.searchRow}>
+                    <Searchbar packageNames={this.props.allPackages} />
+                  </Row>
+                  <div>
+                    <FeaturedPackages
+                      featuredPackageData={this.props.featuredPackageData}
+                    />
+                  </div>
+                </main>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <Footer />
       </div>
     );
   }
