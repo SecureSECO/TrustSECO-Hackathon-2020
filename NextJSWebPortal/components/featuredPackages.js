@@ -16,7 +16,7 @@ export default function FeaturedPackages({ featuredPackageData }) {
               <Card.Subtitle className="mb-2 text-muted">
                 Trustscore: {p.trustScore}
               </Card.Subtitle>
-              <Card.Text>{p.description}</Card.Text>
+              {/* <Card.Text>{p.description}</Card.Text> */}
               <Link href={`/package/${p.packageName.toLowerCase()}`}>
                 <Card.Link>View package trust</Card.Link>
               </Link>

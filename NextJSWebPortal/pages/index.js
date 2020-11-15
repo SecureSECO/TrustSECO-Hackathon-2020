@@ -13,6 +13,7 @@ import Searchbar from "../components/searchbar";
 import { Container, Row, Col, Jumbotron } from "react-bootstrap";
 import FeaturedPackages from "../components/featuredPackages";
 import Footer from "../components/footer";
+// import HeroImage from "./HeroImage";
 
 export async function getStaticProps() {
   const featuredPackageData = getFeaturedData();
@@ -51,6 +52,7 @@ export default class Trust extends React.Component {
             <title>TrustSECO</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
+          {/* <HeroImage></HeroImage> */}
           <Container>
             <Row className={styles.content}>
               <Col

@@ -19,7 +19,7 @@ export function getAllPackageNames() {
 }
 
 export function getFeaturedData() {
-  return data.slice(1, 6);
+  return data.slice(4, 9);
 }
 export function getPackageData(id) {
   for (let i = 0; i < data.length; i++) {
