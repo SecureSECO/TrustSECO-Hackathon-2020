@@ -12,12 +12,12 @@ export default function FeaturedPackages({ featuredPackageData }) {
           // <div>{p.title}</div>
           <Card className={styles.featureCard}>
             <Card.Body>
-              <Card.Title>{p.title}</Card.Title>
+              <Card.Title>{p.packageName}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
                 Trustscore: {p.trustScore}
               </Card.Subtitle>
               <Card.Text></Card.Text>
-              <Link href={`/package/${p.title.toLowerCase()}`}>
+              <Link href={`/package/${p.packageName.toLowerCase()}`}>
                 <Card.Link>View package trust</Card.Link>
               </Link>
             </Card.Body>
