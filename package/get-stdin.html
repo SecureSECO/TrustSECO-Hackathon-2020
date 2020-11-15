@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb06810a28b82fef5a67aad&quot;,
+  &quot;id&quot;: &quot;get-stdin&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:28:14&quot;,
+  &quot;packageName&quot;: &quot;get-stdin&quot;,
+  &quot;description&quot;: &quot;Get stdin as a string or buffer&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/sindresorhus/get-stdin.git&quot;
+  },
+  &quot;readme&quot;: &quot;# get-stdin [![Build Status](https://travis-ci.com/sindresorhus/get-stdin.svg?branch=master)](https://travis-ci.com/sindresorhus/get-stdin)\n\n&gt; Get [stdin](https://nodejs.org/api/process.html#process_process_stdin) as a string or buffer\n\n## Install\n\n```\n$ npm install get-stdin\n```\n\n## Usage\n\n```js\n// example.js\nconst getStdin = require(&#x27;get-stdin&#x27;);\n\n(async () =&gt; {\n\tconsole.log(await getStdin());\n\t//=&gt; &#x27;unicorns&#x27;\n})();\n```\n\n```\n$ echo unicorns | node example.js\nunicorns\n```\n\n## API\n\nBoth methods returns a promise that is resolved when the `end` event fires on the `stdin` stream, indicating that there is no more data to be read.\n\n### getStdin()\n\nGet `stdin` as a `string`.\n\nIn a TTY context, a promise that resolves to an empty `string` is returned.\n\n### getStdin.buffer()\n\nGet `stdin` as a `Buffer`.\n\nIn a TTY context, a promise that resolves to an empty `Buffer` is returned.\n\n## Related\n\n- [get-stream](https://github.com/sindresorhus/get-stream) - Get a stream as a string or buffer\n\n---\n\n&lt;div align=\&quot;center\&quot;&gt;\n\t&lt;b&gt;\n\t\t&lt;a href=\&quot;https://tidelift.com/subscription/pkg/npm-get-stdin?utm_source=npm-get-stdin&amp;utm_medium=referral&amp;utm_campaign=readme\&quot;&gt;Get professional support for this package with a Tidelift subscription&lt;/a&gt;\n\t&lt;/b&gt;\n\t&lt;br&gt;\n\t&lt;sub&gt;\n\t\tTidelift helps make open source sustainable for maintainers while giving companies&lt;br&gt;assurances about security, maintenance, and licensing for their dependencies.\n\t&lt;/sub&gt;\n&lt;/div&gt;\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/sindresorhus/get-stdin#readme&quot;,
+  &quot;trustScore&quot;: 25,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 6,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 25
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-02-13T18:35:28.728Z&quot;,
+      &quot;trustScore&quot;: 31,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-08-04T16:06:14.910Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-08-14T16:10:40.720Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-08-17T19:25:24.108Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2014-11-23T08:50:39.465Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2014-11-23T11:41:23.570Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-01-19T13:42:43.566Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-01-20T13:38:44.238Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-31T06:06:39.962Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-11T16:41:09.677Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;6.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-03-02T18:17:34.787Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;7.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-04-15T02:26:51.629Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;8.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-05-12T09:42:55.101Z&quot;,
+      &quot;trustScore&quot;: 17,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb06810a28b82fef5a67aad","id":"get-stdin","crawlTimestamp":"14/11/2020 23:28:14","packageName":"get-stdin","description":"Get stdin as a string or buffer","repository":{"type":"git","url":"git+https://github.com/sindresorhus/get-stdin.git"},"readme":"# get-stdin [![Build Status](https://travis-ci.com/sindresorhus/get-stdin.svg?branch=master)](https://travis-ci.com/sindresorhus/get-stdin)\n\n\u003e Get [stdin](https://nodejs.org/api/process.html#process_process_stdin) as a string or buffer\n\n## Install\n\n```\n$ npm install get-stdin\n```\n\n## Usage\n\n```js\n// example.js\nconst getStdin = require('get-stdin');\n\n(async () =\u003e {\n\tconsole.log(await getStdin());\n\t//=\u003e 'unicorns'\n})();\n```\n\n```\n$ echo unicorns | node example.js\nunicorns\n```\n\n## API\n\nBoth methods returns a promise that is resolved when the `end` event fires on the `stdin` stream, indicating that there is no more data to be read.\n\n### getStdin()\n\nGet `stdin` as a `string`.\n\nIn a TTY context, a promise that resolves to an empty `string` is returned.\n\n### getStdin.buffer()\n\nGet `stdin` as a `Buffer`.\n\nIn a TTY context, a promise that resolves to an empty `Buffer` is returned.\n\n## Related\n\n- [get-stream](https://github.com/sindresorhus/get-stream) - Get a stream as a string or buffer\n\n---\n\n\u003cdiv align=\"center\"\u003e\n\t\u003cb\u003e\n\t\t\u003ca href=\"https://tidelift.com/subscription/pkg/npm-get-stdin?utm_source=npm-get-stdin\u0026utm_medium=referral\u0026utm_campaign=readme\"\u003eGet professional support for this package with a Tidelift subscription\u003c/a\u003e\n\t\u003c/b\u003e\n\t\u003cbr\u003e\n\t\u003csub\u003e\n\t\tTidelift helps make open source sustainable for maintainers while giving companies\u003cbr\u003eassurances about security, maintenance, and licensing for their dependencies.\n\t\u003c/sub\u003e\n\u003c/div\u003e\n","homepage":"https://github.com/sindresorhus/get-stdin#readme","trustScore":25,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":6,"dependent_repositories":6,"stars":2,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":25},"versions":[{"versionNumber":"0.1.0","timestamp":"2014-02-13T18:35:28.728Z","trustScore":31,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2014-08-04T16:06:14.910Z","trustScore":23,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2014-08-14T16:10:40.720Z","trustScore":27,"dependencies":[]},{"versionNumber":"3.0.0","timestamp":"2014-08-17T19:25:24.108Z","trustScore":24,"dependencies":[]},{"versionNumber":"3.0.1","timestamp":"2014-11-23T08:50:39.465Z","trustScore":23,"dependencies":[]},{"versionNumber":"3.0.2","timestamp":"2014-11-23T11:41:23.570Z","trustScore":25,"dependencies":[]},{"versionNumber":"4.0.0","timestamp":"2015-01-19T13:42:43.566Z","trustScore":27,"dependencies":[]},{"versionNumber":"4.0.1","timestamp":"2015-01-20T13:38:44.238Z","trustScore":23,"dependencies":[]},{"versionNumber":"5.0.0","timestamp":"2015-08-31T06:06:39.962Z","trustScore":26,"dependencies":[]},{"versionNumber":"5.0.1","timestamp":"2015-11-11T16:41:09.677Z","trustScore":25,"dependencies":[]},{"versionNumber":"6.0.0","timestamp":"2018-03-02T18:17:34.787Z","trustScore":23,"dependencies":[]},{"versionNumber":"7.0.0","timestamp":"2019-04-15T02:26:51.629Z","trustScore":25,"dependencies":[]},{"versionNumber":"8.0.0","timestamp":"2020-05-12T09:42:55.101Z","trustScore":17,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"get-stdin"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

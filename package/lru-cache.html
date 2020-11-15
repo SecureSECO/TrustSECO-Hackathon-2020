@@ -1,0 +1,481 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb05c2577b543d8a4c7df97&quot;,
+  &quot;id&quot;: &quot;lru-cache&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 22:37:25&quot;,
+  &quot;packageName&quot;: &quot;lru-cache&quot;,
+  &quot;description&quot;: &quot;A cache object that deletes the least-recently-used items.&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/isaacs/node-lru-cache.git&quot;
+  },
+  &quot;readme&quot;: &quot;# lru cache\n\nA cache object that deletes the least-recently-used items.\n\n[![Build Status](https://travis-ci.org/isaacs/node-lru-cache.svg?branch=master)](https://travis-ci.org/isaacs/node-lru-cache) [![Coverage Status](https://coveralls.io/repos/isaacs/node-lru-cache/badge.svg?service=github)](https://coveralls.io/github/isaacs/node-lru-cache)\n\n## Installation:\n\n```javascript\nnpm install lru-cache --save\n```\n\n## Usage:\n\n```javascript\nvar LRU = require(\&quot;lru-cache\&quot;)\n  , options = { max: 500\n              , length: function (n, key) { return n * 2 + key.length }\n              , dispose: function (key, n) { n.close() }\n              , maxAge: 1000 * 60 * 60 }\n  , cache = new LRU(options)\n  , otherCache = new LRU(50) // sets just the max size\n\ncache.set(\&quot;key\&quot;, \&quot;value\&quot;)\ncache.get(\&quot;key\&quot;) // \&quot;value\&quot;\n\n// non-string keys ARE fully supported\n// but note that it must be THE SAME object, not\n// just a JSON-equivalent object.\nvar someObject = { a: 1 }\ncache.set(someObject, &#x27;a value&#x27;)\n// Object keys are not toString()-ed\ncache.set(&#x27;[object Object]&#x27;, &#x27;a different value&#x27;)\nassert.equal(cache.get(someObject), &#x27;a value&#x27;)\n// A similar object with same keys/values won&#x27;t work,\n// because it&#x27;s a different object identity\nassert.equal(cache.get({ a: 1 }), undefined)\n\ncache.reset()    // empty the cache\n```\n\nIf you put more stuff in it, then items will fall out.\n\nIf you try to put an oversized thing in it, then it&#x27;ll fall out right\naway.\n\n## Options\n\n* `max` The maximum size of the cache, checked by applying the length\n  function to all values in the cache.  Not setting this is kind of\n  silly, since that&#x27;s the whole purpose of this lib, but it defaults\n  to `Infinity`.  Setting it to a non-number or negative number will\n  throw a `TypeError`.  Setting it to 0 makes it be `Infinity`.\n* `maxAge` Maximum age in ms.  Items are not pro-actively pruned out\n  as they age, but if you try to get an item that is too old, it&#x27;ll\n  drop it and return undefined instead of giving it to you.\n  Setting this to a negative value will make everything seem old!\n  Setting it to a non-number will throw a `TypeError`.\n* `length` Function that is used to calculate the length of stored\n  items.  If you&#x27;re storing strings or buffers, then you probably want\n  to do something like `function(n, key){return n.length}`.  The default is\n  `function(){return 1}`, which is fine if you want to store `max`\n  like-sized things.  The item is passed as the first argument, and\n  the key is passed as the second argumnet.\n* `dispose` Function that is called on items when they are dropped\n  from the cache.  This can be handy if you want to close file\n  descriptors or do other cleanup tasks when items are no longer\n  accessible.  Called with `key, value`.  It&#x27;s called *before*\n  actually removing the item from the internal cache, so if you want\n  to immediately put it back in, you&#x27;ll have to do that in a\n  `nextTick` or `setTimeout` callback or it won&#x27;t do anything.\n* `stale` By default, if you set a `maxAge`, it&#x27;ll only actually pull\n  stale items out of the cache when you `get(key)`.  (That is, it&#x27;s\n  not pre-emptively doing a `setTimeout` or anything.)  If you set\n  `stale:true`, it&#x27;ll return the stale value before deleting it.  If\n  you don&#x27;t set this, then it&#x27;ll return `undefined` when you try to\n  get a stale entry, as if it had already been deleted.\n* `noDisposeOnSet` By default, if you set a `dispose()` method, then\n  it&#x27;ll be called whenever a `set()` operation overwrites an existing\n  key.  If you set this option, `dispose()` will only be called when a\n  key falls out of the cache, not when it is overwritten.\n* `updateAgeOnGet` When using time-expiring entries with `maxAge`,\n  setting this to `true` will make each item&#x27;s effective time update\n  to the current time whenever it is retrieved from cache, causing it\n  to not expire.  (It can still fall out of cache based on recency of\n  use, of course.)\n\n## API\n\n* `set(key, value, maxAge)`\n* `get(key) =&gt; value`\n\n    Both of these will update the \&quot;recently used\&quot;-ness of the key.\n    They do what you think. `maxAge` is optional and overrides the\n    cache `maxAge` option if provided.\n\n    If the key is not found, `get()` will return `undefined`.\n\n    The key and val can be any value.\n\n* `peek(key)`\n\n    Returns the key value (or `undefined` if not found) without\n    updating the \&quot;recently used\&quot;-ness of the key.\n\n    (If you find yourself using this a lot, you *might* be using the\n    wrong sort of data structure, but there are some use cases where\n    it&#x27;s handy.)\n\n* `del(key)`\n\n    Deletes a key out of the cache.\n\n* `reset()`\n\n    Clear the cache entirely, throwing away all values.\n\n* `has(key)`\n\n    Check if a key is in the cache, without updating the recent-ness\n    or deleting it for being stale.\n\n* `forEach(function(value,key,cache), [thisp])`\n\n    Just like `Array.prototype.forEach`.  Iterates over all the keys\n    in the cache, in order of recent-ness.  (Ie, more recently used\n    items are iterated over first.)\n\n* `rforEach(function(value,key,cache), [thisp])`\n\n    The same as `cache.forEach(...)` but items are iterated over in\n    reverse order.  (ie, less recently used items are iterated over\n    first.)\n\n* `keys()`\n\n    Return an array of the keys in the cache.\n\n* `values()`\n\n    Return an array of the values in the cache.\n\n* `length`\n\n    Return total length of objects in cache taking into account\n    `length` options function.\n\n* `itemCount`\n\n    Return total quantity of objects currently in cache. Note, that\n    `stale` (see options) items are returned as part of this item\n    count.\n\n* `dump()`\n\n    Return an array of the cache entries ready for serialization and usage\n    with &#x27;destinationCache.load(arr)`.\n\n* `load(cacheEntriesArray)`\n\n    Loads another cache entries array, obtained with `sourceCache.dump()`,\n    into the cache. The destination cache is reset before loading new entries\n\n* `prune()`\n\n    Manually iterates over the entire cache proactively pruning old entries\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/isaacs/node-lru-cache#readme&quot;,
+  &quot;trustScore&quot;: 28,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 1,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 6,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 4,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 28
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2011-07-16T09:09:00.041Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2011-07-16T09:09:00.041Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2011-07-16T09:09:00.041Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2011-07-29T19:12:01.745Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.5&quot;,
+      &quot;timestamp&quot;: &quot;2011-12-09T01:12:43.326Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.6&quot;,
+      &quot;timestamp&quot;: &quot;2012-03-27T20:58:02.558Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-04-10T23:40:12.876Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-01T09:36:45.601Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-09T22:21:20.057Z&quot;,
+      &quot;trustScore&quot;: 34,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-14T01:07:53.273Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-27T16:37:06.609Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2012-09-13T05:19:49.029Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2012-09-17T15:57:27.674Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-10-19T12:23:46.276Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-11-29T18:39:13.480Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-11-29T19:35:00.176Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.2&quot;,
+      &quot;timestamp&quot;: &quot;2013-01-15T16:07:29.189Z&quot;,
+      &quot;trustScore&quot;: 34,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.4&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-26T00:15:52.058Z&quot;,
+      &quot;trustScore&quot;: 31,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-26T00:28:31.542Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.1&quot;,
+      &quot;timestamp&quot;: &quot;2013-08-19T21:27:14.453Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.5.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-11-21T17:38:28.040Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.5.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-10T16:23:17.960Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.5.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-10T16:26:47.162Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-15T17:59:01.480Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-15T18:09:11.352Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-24T22:13:44.022Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.3&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-15T01:21:44.570Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.4&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-19T01:38:58.214Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.6.5&quot;,
+      &quot;timestamp&quot;: &quot;2015-06-30T18:20:57.642Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.7.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-09-11T18:23:12.257Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.7.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-23T23:56:40.083Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.7.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-24T19:23:22.999Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.7.3&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-25T18:12:14.005Z&quot;,
+      &quot;trustScore&quot;: 33,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-27T22:55:18.812Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-27T23:09:26.205Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-28T01:03:32.062Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-28T02:50:32.082Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-28T21:54:13.864Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-12-21T04:46:32.089Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2016-03-22T17:22:52.848Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2016-11-27T19:10:00.911Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-06-06T17:54:15.370Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2017-06-11T03:00:46.159Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.1.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2018-03-08T17:58:33.933Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.1.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.3&quot;,
+      &quot;timestamp&quot;: &quot;2018-05-07T23:17:11.482Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.1.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.4&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-21T00:14:09.190Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-21T00:46:38.801Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-21T01:04:56.118Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-21T01:23:13.744Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-21T01:44:45.407Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.1.5&quot;,
+      &quot;timestamp&quot;: &quot;2018-11-29T17:49:34.387Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;pseudomap&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^2.1.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;6.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-07-11T00:59:07.352Z&quot;,
+      &quot;trustScore&quot;: 16,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;yallist&quot;,
+          &quot;version&quot;: &quot;^4.0.0&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb05c2577b543d8a4c7df97","id":"lru-cache","crawlTimestamp":"14/11/2020 22:37:25","packageName":"lru-cache","description":"A cache object that deletes the least-recently-used items.","repository":{"type":"git","url":"git://github.com/isaacs/node-lru-cache.git"},"readme":"# lru cache\n\nA cache object that deletes the least-recently-used items.\n\n[![Build Status](https://travis-ci.org/isaacs/node-lru-cache.svg?branch=master)](https://travis-ci.org/isaacs/node-lru-cache) [![Coverage Status](https://coveralls.io/repos/isaacs/node-lru-cache/badge.svg?service=github)](https://coveralls.io/github/isaacs/node-lru-cache)\n\n## Installation:\n\n```javascript\nnpm install lru-cache --save\n```\n\n## Usage:\n\n```javascript\nvar LRU = require(\"lru-cache\")\n  , options = { max: 500\n              , length: function (n, key) { return n * 2 + key.length }\n              , dispose: function (key, n) { n.close() }\n              , maxAge: 1000 * 60 * 60 }\n  , cache = new LRU(options)\n  , otherCache = new LRU(50) // sets just the max size\n\ncache.set(\"key\", \"value\")\ncache.get(\"key\") // \"value\"\n\n// non-string keys ARE fully supported\n// but note that it must be THE SAME object, not\n// just a JSON-equivalent object.\nvar someObject = { a: 1 }\ncache.set(someObject, 'a value')\n// Object keys are not toString()-ed\ncache.set('[object Object]', 'a different value')\nassert.equal(cache.get(someObject), 'a value')\n// A similar object with same keys/values won't work,\n// because it's a different object identity\nassert.equal(cache.get({ a: 1 }), undefined)\n\ncache.reset()    // empty the cache\n```\n\nIf you put more stuff in it, then items will fall out.\n\nIf you try to put an oversized thing in it, then it'll fall out right\naway.\n\n## Options\n\n* `max` The maximum size of the cache, checked by applying the length\n  function to all values in the cache.  Not setting this is kind of\n  silly, since that's the whole purpose of this lib, but it defaults\n  to `Infinity`.  Setting it to a non-number or negative number will\n  throw a `TypeError`.  Setting it to 0 makes it be `Infinity`.\n* `maxAge` Maximum age in ms.  Items are not pro-actively pruned out\n  as they age, but if you try to get an item that is too old, it'll\n  drop it and return undefined instead of giving it to you.\n  Setting this to a negative value will make everything seem old!\n  Setting it to a non-number will throw a `TypeError`.\n* `length` Function that is used to calculate the length of stored\n  items.  If you're storing strings or buffers, then you probably want\n  to do something like `function(n, key){return n.length}`.  The default is\n  `function(){return 1}`, which is fine if you want to store `max`\n  like-sized things.  The item is passed as the first argument, and\n  the key is passed as the second argumnet.\n* `dispose` Function that is called on items when they are dropped\n  from the cache.  This can be handy if you want to close file\n  descriptors or do other cleanup tasks when items are no longer\n  accessible.  Called with `key, value`.  It's called *before*\n  actually removing the item from the internal cache, so if you want\n  to immediately put it back in, you'll have to do that in a\n  `nextTick` or `setTimeout` callback or it won't do anything.\n* `stale` By default, if you set a `maxAge`, it'll only actually pull\n  stale items out of the cache when you `get(key)`.  (That is, it's\n  not pre-emptively doing a `setTimeout` or anything.)  If you set\n  `stale:true`, it'll return the stale value before deleting it.  If\n  you don't set this, then it'll return `undefined` when you try to\n  get a stale entry, as if it had already been deleted.\n* `noDisposeOnSet` By default, if you set a `dispose()` method, then\n  it'll be called whenever a `set()` operation overwrites an existing\n  key.  If you set this option, `dispose()` will only be called when a\n  key falls out of the cache, not when it is overwritten.\n* `updateAgeOnGet` When using time-expiring entries with `maxAge`,\n  setting this to `true` will make each item's effective time update\n  to the current time whenever it is retrieved from cache, causing it\n  to not expire.  (It can still fall out of cache based on recency of\n  use, of course.)\n\n## API\n\n* `set(key, value, maxAge)`\n* `get(key) =\u003e value`\n\n    Both of these will update the \"recently used\"-ness of the key.\n    They do what you think. `maxAge` is optional and overrides the\n    cache `maxAge` option if provided.\n\n    If the key is not found, `get()` will return `undefined`.\n\n    The key and val can be any value.\n\n* `peek(key)`\n\n    Returns the key value (or `undefined` if not found) without\n    updating the \"recently used\"-ness of the key.\n\n    (If you find yourself using this a lot, you *might* be using the\n    wrong sort of data structure, but there are some use cases where\n    it's handy.)\n\n* `del(key)`\n\n    Deletes a key out of the cache.\n\n* `reset()`\n\n    Clear the cache entirely, throwing away all values.\n\n* `has(key)`\n\n    Check if a key is in the cache, without updating the recent-ness\n    or deleting it for being stale.\n\n* `forEach(function(value,key,cache), [thisp])`\n\n    Just like `Array.prototype.forEach`.  Iterates over all the keys\n    in the cache, in order of recent-ness.  (Ie, more recently used\n    items are iterated over first.)\n\n* `rforEach(function(value,key,cache), [thisp])`\n\n    The same as `cache.forEach(...)` but items are iterated over in\n    reverse order.  (ie, less recently used items are iterated over\n    first.)\n\n* `keys()`\n\n    Return an array of the keys in the cache.\n\n* `values()`\n\n    Return an array of the values in the cache.\n\n* `length`\n\n    Return total length of objects in cache taking into account\n    `length` options function.\n\n* `itemCount`\n\n    Return total quantity of objects currently in cache. Note, that\n    `stale` (see options) items are returned as part of this item\n    count.\n\n* `dump()`\n\n    Return an array of the cache entries ready for serialization and usage\n    with 'destinationCache.load(arr)`.\n\n* `load(cacheEntriesArray)`\n\n    Loads another cache entries array, obtained with `sourceCache.dump()`,\n    into the cache. The destination cache is reset before loading new entries\n\n* `prune()`\n\n    Manually iterates over the entire cache proactively pruning old entries\n","homepage":"https://github.com/isaacs/node-lru-cache#readme","trustScore":28,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":1,"not_brand_new":1,"one_point_oh":1,"dependent_projects":6,"dependent_repositories":6,"stars":4,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":28},"versions":[{"versionNumber":"1.0.1","timestamp":"2011-07-16T09:09:00.041Z","trustScore":28,"dependencies":[]},{"versionNumber":"1.0.2","timestamp":"2011-07-16T09:09:00.041Z","trustScore":27,"dependencies":[]},{"versionNumber":"1.0.3","timestamp":"2011-07-16T09:09:00.041Z","trustScore":29,"dependencies":[]},{"versionNumber":"1.0.4","timestamp":"2011-07-29T19:12:01.745Z","trustScore":30,"dependencies":[]},{"versionNumber":"1.0.5","timestamp":"2011-12-09T01:12:43.326Z","trustScore":30,"dependencies":[]},{"versionNumber":"1.0.6","timestamp":"2012-03-27T20:58:02.558Z","trustScore":27,"dependencies":[]},{"versionNumber":"1.1.0","timestamp":"2012-04-10T23:40:12.876Z","trustScore":28,"dependencies":[]},{"versionNumber":"1.1.1","timestamp":"2012-08-01T09:36:45.601Z","trustScore":26,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2012-08-09T22:21:20.057Z","trustScore":34,"dependencies":[]},{"versionNumber":"2.0.1","timestamp":"2012-08-14T01:07:53.273Z","trustScore":27,"dependencies":[]},{"versionNumber":"2.0.2","timestamp":"2012-08-27T16:37:06.609Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.0.3","timestamp":"2012-09-13T05:19:49.029Z","trustScore":25,"dependencies":[]},{"versionNumber":"2.0.4","timestamp":"2012-09-17T15:57:27.674Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.1.0","timestamp":"2012-10-19T12:23:46.276Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.2.0","timestamp":"2012-11-29T18:39:13.480Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.2.1","timestamp":"2012-11-29T19:35:00.176Z","trustScore":25,"dependencies":[]},{"versionNumber":"2.2.2","timestamp":"2013-01-15T16:07:29.189Z","trustScore":34,"dependencies":[]},{"versionNumber":"2.2.4","timestamp":"2013-03-26T00:15:52.058Z","trustScore":31,"dependencies":[]},{"versionNumber":"2.3.0","timestamp":"2013-03-26T00:28:31.542Z","trustScore":23,"dependencies":[]},{"versionNumber":"2.3.1","timestamp":"2013-08-19T21:27:14.453Z","trustScore":32,"dependencies":[]},{"versionNumber":"2.5.0","timestamp":"2013-11-21T17:38:28.040Z","trustScore":21,"dependencies":[]},{"versionNumber":"2.5.1","timestamp":"2015-04-10T16:23:17.960Z","trustScore":21,"dependencies":[]},{"versionNumber":"2.5.2","timestamp":"2015-04-10T16:26:47.162Z","trustScore":27,"dependencies":[]},{"versionNumber":"2.6.0","timestamp":"2015-04-15T17:59:01.480Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.6.1","timestamp":"2015-04-15T18:09:11.352Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.6.2","timestamp":"2015-04-24T22:13:44.022Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.6.3","timestamp":"2015-05-15T01:21:44.570Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.6.4","timestamp":"2015-05-19T01:38:58.214Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.6.5","timestamp":"2015-06-30T18:20:57.642Z","trustScore":24,"dependencies":[]},{"versionNumber":"2.7.0","timestamp":"2015-09-11T18:23:12.257Z","trustScore":23,"dependencies":[]},{"versionNumber":"2.7.1","timestamp":"2015-11-23T23:56:40.083Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.7.2","timestamp":"2015-11-24T19:23:22.999Z","trustScore":28,"dependencies":[]},{"versionNumber":"2.7.3","timestamp":"2015-11-25T18:12:14.005Z","trustScore":33,"dependencies":[]},{"versionNumber":"3.0.0","timestamp":"2015-11-27T22:55:18.812Z","trustScore":26,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"}]},{"versionNumber":"3.1.0","timestamp":"2015-11-27T23:09:26.205Z","trustScore":27,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"}]},{"versionNumber":"3.1.1","timestamp":"2015-11-28T01:03:32.062Z","trustScore":30,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"}]},{"versionNumber":"3.1.2","timestamp":"2015-11-28T02:50:32.082Z","trustScore":29,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"}]},{"versionNumber":"3.2.0","timestamp":"2015-11-28T21:54:13.864Z","trustScore":29,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"}]},{"versionNumber":"4.0.0","timestamp":"2015-12-21T04:46:32.089Z","trustScore":30,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"},{"packageName":"yallist","version":"^2.0.0"}]},{"versionNumber":"4.0.1","timestamp":"2016-03-22T17:22:52.848Z","trustScore":30,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"},{"packageName":"yallist","version":"^2.0.0"}]},{"versionNumber":"4.0.2","timestamp":"2016-11-27T19:10:00.911Z","trustScore":32,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"},{"packageName":"yallist","version":"^2.0.0"}]},{"versionNumber":"4.1.0","timestamp":"2017-06-06T17:54:15.370Z","trustScore":29,"dependencies":[{"packageName":"pseudomap","version":"^1.0.1"},{"packageName":"yallist","version":"^2.0.0"}]},{"versionNumber":"4.1.1","timestamp":"2017-06-11T03:00:46.159Z","trustScore":26,"dependencies":[{"packageName":"pseudomap","version":"^1.0.2"},{"packageName":"yallist","version":"^2.1.2"}]},{"versionNumber":"4.1.2","timestamp":"2018-03-08T17:58:33.933Z","trustScore":27,"dependencies":[{"packageName":"pseudomap","version":"^1.0.2"},{"packageName":"yallist","version":"^2.1.2"}]},{"versionNumber":"4.1.3","timestamp":"2018-05-07T23:17:11.482Z","trustScore":28,"dependencies":[{"packageName":"pseudomap","version":"^1.0.2"},{"packageName":"yallist","version":"^2.1.2"}]},{"versionNumber":"4.1.4","timestamp":"2018-11-21T00:14:09.190Z","trustScore":28,"dependencies":[{"packageName":"pseudomap","version":"^1.0.2"},{"packageName":"yallist","version":"^3.0.2"}]},{"versionNumber":"5.0.0","timestamp":"2018-11-21T00:46:38.801Z","trustScore":27,"dependencies":[{"packageName":"yallist","version":"^3.0.2"}]},{"versionNumber":"5.0.1","timestamp":"2018-11-21T01:04:56.118Z","trustScore":28,"dependencies":[{"packageName":"yallist","version":"^3.0.2"}]},{"versionNumber":"5.1.0","timestamp":"2018-11-21T01:23:13.744Z","trustScore":28,"dependencies":[{"packageName":"yallist","version":"^3.0.2"}]},{"versionNumber":"5.1.1","timestamp":"2018-11-21T01:44:45.407Z","trustScore":26,"dependencies":[{"packageName":"yallist","version":"^3.0.2"}]},{"versionNumber":"4.1.5","timestamp":"2018-11-29T17:49:34.387Z","trustScore":30,"dependencies":[{"packageName":"pseudomap","version":"^1.0.2"},{"packageName":"yallist","version":"^2.1.2"}]},{"versionNumber":"6.0.0","timestamp":"2020-07-11T00:59:07.352Z","trustScore":16,"dependencies":[{"packageName":"yallist","version":"^4.0.0"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"lru-cache"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

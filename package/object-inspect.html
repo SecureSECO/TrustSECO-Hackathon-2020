@@ -1,0 +1,191 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb06787a28b82fef5a67a44&quot;,
+  &quot;id&quot;: &quot;object-inspect&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:25:57&quot;,
+  &quot;packageName&quot;: &quot;object-inspect&quot;,
+  &quot;description&quot;: &quot;string representations of objects in node and the browser&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/inspect-js/object-inspect.git&quot;
+  },
+  &quot;readme&quot;: &quot;# object-inspect\n\nstring representations of objects in node and the browser\n\n[![build status](https://secure.travis-ci.com/inspect-js/object-inspect.png)](https://travis-ci.com/inspect-js/object-inspect)\n\n# example\n\n## circular\n\n``` js\nvar inspect = require(&#x27;object-inspect&#x27;);\nvar obj = { a: 1, b: [3,4] };\nobj.c = obj;\nconsole.log(inspect(obj));\n```\n\n## dom element\n\n``` js\nvar inspect = require(&#x27;object-inspect&#x27;);\n\nvar d = document.createElement(&#x27;div&#x27;);\nd.setAttribute(&#x27;id&#x27;, &#x27;beep&#x27;);\nd.innerHTML = &#x27;&lt;b&gt;wooo&lt;/b&gt;&lt;i&gt;iiiii&lt;/i&gt;&#x27;;\n\nconsole.log(inspect([ d, { a: 3, b : 4, c: [5,6,[7,[8,[9]]]] } ]));\n```\n\noutput:\n\n```\n[ &lt;div id=\&quot;beep\&quot;&gt;...&lt;/div&gt;, { a: 3, b: 4, c: [ 5, 6, [ 7, [ 8, [ ... ] ] ] ] } ]\n```\n\n# methods\n\n``` js\nvar inspect = require(&#x27;object-inspect&#x27;)\n```\n\n## var s = inspect(obj, opts={})\n\nReturn a string `s` with the string representation of `obj` up to a depth of `opts.depth`.\n\nAdditional options:\n  - `quoteStyle`: must be \&quot;single\&quot; or \&quot;double\&quot;, if present. Default `&#x27;single&#x27;` for strings, `&#x27;double&#x27;` for HTML elements.\n  - `maxStringLength`: must be `0`, a positive integer, `Infinity`, or `null`, if present. Default `Infinity`.\n  - `customInspect`: When `true`, a custom inspect method function will be invoked. Default `true`.\n  - `indent`: must be \&quot;\\t\&quot;, `null`, or a positive integer. Default `null`.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install object-inspect\n```\n\n# license\n\nMIT\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/inspect-js/object-inspect&quot;,
+  &quot;trustScore&quot;: 23,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 1,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 4,
+    &quot;dependent_repositories&quot;: 5,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 23
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-07-26T10:27:15.032Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-07-26T10:40:40.966Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2013-07-26T11:02:26.154Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;tape&quot;,
+          &quot;version&quot;: &quot;~1.0.4&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2013-07-26T11:13:33.886Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;tape&quot;,
+          &quot;version&quot;: &quot;~1.0.4&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.3&quot;,
+      &quot;timestamp&quot;: &quot;2013-07-26T11:21:00.352Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;tape&quot;,
+          &quot;version&quot;: &quot;~1.0.4&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-03-05T00:09:40.598Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-03-05T01:11:08.775Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.3.1&quot;,
+      &quot;timestamp&quot;: &quot;2014-03-05T01:24:38.503Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.4.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-03-22T02:22:02.042Z&quot;,
+      &quot;trustScore&quot;: 20,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-08-05T02:06:00.347Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-07-19T07:22:54.442Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-07T07:10:40.762Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-12-15T01:37:54.806Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2016-04-09T07:10:40.716Z&quot;,
+      &quot;trustScore&quot;: 20,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.2.1&quot;,
+      &quot;timestamp&quot;: &quot;2016-04-09T15:57:31.022Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.2.2&quot;,
+      &quot;timestamp&quot;: &quot;2017-03-25T02:42:28.814Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-07-31T22:37:18.753Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.4.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-10-25T06:50:18.131Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.4.1&quot;,
+      &quot;timestamp&quot;: &quot;2017-12-20T07:23:05.801Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.5.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-12-26T07:49:05.938Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.6.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-05-02T23:13:04.663Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.7.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-11-11T05:56:54.089Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.8.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-06-19T06:05:34.212Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb06787a28b82fef5a67a44","id":"object-inspect","crawlTimestamp":"14/11/2020 23:25:57","packageName":"object-inspect","description":"string representations of objects in node and the browser","repository":{"type":"git","url":"git://github.com/inspect-js/object-inspect.git"},"readme":"# object-inspect\n\nstring representations of objects in node and the browser\n\n[![build status](https://secure.travis-ci.com/inspect-js/object-inspect.png)](https://travis-ci.com/inspect-js/object-inspect)\n\n# example\n\n## circular\n\n``` js\nvar inspect = require('object-inspect');\nvar obj = { a: 1, b: [3,4] };\nobj.c = obj;\nconsole.log(inspect(obj));\n```\n\n## dom element\n\n``` js\nvar inspect = require('object-inspect');\n\nvar d = document.createElement('div');\nd.setAttribute('id', 'beep');\nd.innerHTML = '\u003cb\u003ewooo\u003c/b\u003e\u003ci\u003eiiiii\u003c/i\u003e';\n\nconsole.log(inspect([ d, { a: 3, b : 4, c: [5,6,[7,[8,[9]]]] } ]));\n```\n\noutput:\n\n```\n[ \u003cdiv id=\"beep\"\u003e...\u003c/div\u003e, { a: 3, b: 4, c: [ 5, 6, [ 7, [ 8, [ ... ] ] ] ] } ]\n```\n\n# methods\n\n``` js\nvar inspect = require('object-inspect')\n```\n\n## var s = inspect(obj, opts={})\n\nReturn a string `s` with the string representation of `obj` up to a depth of `opts.depth`.\n\nAdditional options:\n  - `quoteStyle`: must be \"single\" or \"double\", if present. Default `'single'` for strings, `'double'` for HTML elements.\n  - `maxStringLength`: must be `0`, a positive integer, `Infinity`, or `null`, if present. Default `Infinity`.\n  - `customInspect`: When `true`, a custom inspect method function will be invoked. Default `true`.\n  - `indent`: must be \"\\t\", `null`, or a positive integer. Default `null`.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install object-inspect\n```\n\n# license\n\nMIT\n","homepage":"https://github.com/inspect-js/object-inspect","trustScore":23,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":1,"not_brand_new":1,"one_point_oh":1,"dependent_projects":4,"dependent_repositories":5,"stars":2,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":23},"versions":[{"versionNumber":"0.0.0","timestamp":"2013-07-26T10:27:15.032Z","trustScore":26,"dependencies":[]},{"versionNumber":"0.1.0","timestamp":"2013-07-26T10:40:40.966Z","trustScore":22,"dependencies":[]},{"versionNumber":"0.1.1","timestamp":"2013-07-26T11:02:26.154Z","trustScore":24,"dependencies":[{"packageName":"tape","version":"~1.0.4"}]},{"versionNumber":"0.1.2","timestamp":"2013-07-26T11:13:33.886Z","trustScore":25,"dependencies":[{"packageName":"tape","version":"~1.0.4"}]},{"versionNumber":"0.1.3","timestamp":"2013-07-26T11:21:00.352Z","trustScore":22,"dependencies":[{"packageName":"tape","version":"~1.0.4"}]},{"versionNumber":"0.2.0","timestamp":"2014-03-05T00:09:40.598Z","trustScore":22,"dependencies":[]},{"versionNumber":"0.3.0","timestamp":"2014-03-05T01:11:08.775Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.3.1","timestamp":"2014-03-05T01:24:38.503Z","trustScore":21,"dependencies":[]},{"versionNumber":"0.4.0","timestamp":"2014-03-22T02:22:02.042Z","trustScore":20,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2014-08-05T02:06:00.347Z","trustScore":19,"dependencies":[]},{"versionNumber":"1.0.1","timestamp":"2015-07-19T07:22:54.442Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.0.2","timestamp":"2015-08-07T07:10:40.762Z","trustScore":22,"dependencies":[]},{"versionNumber":"1.1.0","timestamp":"2015-12-15T01:37:54.806Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.2.0","timestamp":"2016-04-09T07:10:40.716Z","trustScore":20,"dependencies":[]},{"versionNumber":"1.2.1","timestamp":"2016-04-09T15:57:31.022Z","trustScore":23,"dependencies":[]},{"versionNumber":"1.2.2","timestamp":"2017-03-25T02:42:28.814Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.3.0","timestamp":"2017-07-31T22:37:18.753Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.4.0","timestamp":"2017-10-25T06:50:18.131Z","trustScore":21,"dependencies":[]},{"versionNumber":"1.4.1","timestamp":"2017-12-20T07:23:05.801Z","trustScore":23,"dependencies":[]},{"versionNumber":"1.5.0","timestamp":"2017-12-26T07:49:05.938Z","trustScore":21,"dependencies":[]},{"versionNumber":"1.6.0","timestamp":"2018-05-02T23:13:04.663Z","trustScore":26,"dependencies":[]},{"versionNumber":"1.7.0","timestamp":"2019-11-11T05:56:54.089Z","trustScore":21,"dependencies":[]},{"versionNumber":"1.8.0","timestamp":"2020-06-19T06:05:34.212Z","trustScore":12,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"object-inspect"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb06715a28b82fef5a679f2&quot;,
+  &quot;id&quot;: &quot;simple-methodize-x&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:24:04&quot;,
+  &quot;packageName&quot;: &quot;simple-methodize-x&quot;,
+  &quot;description&quot;: &quot;Methodize a prototype method. Compliant to 8 arguments.&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/Xotic750/simple-methodize-x.git&quot;
+  },
+  &quot;readme&quot;: &quot;&lt;a\n  href=\&quot;https://travis-ci.org/Xotic750/simple-methodize-x\&quot;\n  title=\&quot;Travis status\&quot;&gt;\n&lt;img\n  src=\&quot;https://travis-ci.org/Xotic750/simple-methodize-x.svg?branch=master\&quot;\n  alt=\&quot;Travis status\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://david-dm.org/Xotic750/simple-methodize-x\&quot;\n  title=\&quot;Dependency status\&quot;&gt;\n&lt;img src=\&quot;https://david-dm.org/Xotic750/simple-methodize-x/status.svg\&quot;\n  alt=\&quot;Dependency status\&quot; height=\&quot;18\&quot;/&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://david-dm.org/Xotic750/simple-methodize-x?type=dev\&quot;\n  title=\&quot;devDependency status\&quot;&gt;\n&lt;img src=\&quot;https://david-dm.org/Xotic750/simple-methodize-x/dev-status.svg\&quot;\n  alt=\&quot;devDependency status\&quot; height=\&quot;18\&quot;/&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://badge.fury.io/js/simple-methodize-x\&quot;\n  title=\&quot;npm version\&quot;&gt;\n&lt;img src=\&quot;https://badge.fury.io/js/simple-methodize-x.svg\&quot;\n  alt=\&quot;npm version\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://www.jsdelivr.com/package/npm/simple-methodize-x\&quot;\n  title=\&quot;jsDelivr hits\&quot;&gt;\n&lt;img src=\&quot;https://data.jsdelivr.com/v1/package/npm/simple-methodize-x/badge?style=rounded\&quot;\n  alt=\&quot;jsDelivr hits\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://bettercodehub.com/results/Xotic750/simple-methodize-x\&quot;\n  title=\&quot;bettercodehub score\&quot;&gt;\n&lt;img src=\&quot;https://bettercodehub.com/edge/badge/Xotic750/simple-methodize-x?branch=master\&quot;\n  alt=\&quot;bettercodehub score\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://coveralls.io/github/Xotic750/simple-methodize-x?branch=master\&quot;\n  title=\&quot;Coverage Status\&quot;&gt;\n&lt;img src=\&quot;https://coveralls.io/repos/github/Xotic750/simple-methodize-x/badge.svg?branch=master\&quot;\n  alt=\&quot;Coverage Status\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n\n&lt;a name=\&quot;module_simple-methodize-x\&quot;&gt;&lt;/a&gt;\n\n## simple-methodize-x\n\nMethodize a prototype method. Compliant to 8 arguments.\n\n&lt;a name=\&quot;exp_module_simple-methodize-x--module.exports\&quot;&gt;&lt;/a&gt;\n\n### `module.exports` ⇒ &lt;code&gt;\\*&lt;/code&gt; ⏏\n\nMethodize a prototype method. Compliant to 8 arguments.\n\n**Kind**: Exported member  \n**Returns**: &lt;code&gt;Function&lt;/code&gt; - The static method.\n**Throws**:\n\n- &lt;code&gt;TypeError&lt;/code&gt; If prototypeMethod is not a function.\n\n| Param           | Type                  | Description           |\n| --------------- | --------------------- | --------------------- |\n| prototypeMethod | &lt;code&gt;Function&lt;/code&gt; | The prototype method. |\n\n**Example**\n\n```js\nimport methodize from &#x27;simple-methodize-x&#x27;;\n\nconst push = methodize([].push);\nconst array = [];\npush(array, 1);\npush(array, 2);\nconsole.log(array); // [1, 2]\n```\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/Xotic750/simple-methodize-x&quot;,
+  &quot;trustScore&quot;: 14,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 4,
+    &quot;dependent_repositories&quot;: 2,
+    &quot;stars&quot;: 0,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 0,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 14
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-16T12:44:08.690Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;simple-bind-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-16T15:13:58.122Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-16T19:21:50.695Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;util-pusher-x&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-20T18:59:00.030Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;util-pusher-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-28T16:35:18.409Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;util-pusher-x&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb06715a28b82fef5a679f2","id":"simple-methodize-x","crawlTimestamp":"14/11/2020 23:24:04","packageName":"simple-methodize-x","description":"Methodize a prototype method. Compliant to 8 arguments.","repository":{"type":"git","url":"git+https://github.com/Xotic750/simple-methodize-x.git"},"readme":"\u003ca\n  href=\"https://travis-ci.org/Xotic750/simple-methodize-x\"\n  title=\"Travis status\"\u003e\n\u003cimg\n  src=\"https://travis-ci.org/Xotic750/simple-methodize-x.svg?branch=master\"\n  alt=\"Travis status\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://david-dm.org/Xotic750/simple-methodize-x\"\n  title=\"Dependency status\"\u003e\n\u003cimg src=\"https://david-dm.org/Xotic750/simple-methodize-x/status.svg\"\n  alt=\"Dependency status\" height=\"18\"/\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://david-dm.org/Xotic750/simple-methodize-x?type=dev\"\n  title=\"devDependency status\"\u003e\n\u003cimg src=\"https://david-dm.org/Xotic750/simple-methodize-x/dev-status.svg\"\n  alt=\"devDependency status\" height=\"18\"/\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://badge.fury.io/js/simple-methodize-x\"\n  title=\"npm version\"\u003e\n\u003cimg src=\"https://badge.fury.io/js/simple-methodize-x.svg\"\n  alt=\"npm version\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://www.jsdelivr.com/package/npm/simple-methodize-x\"\n  title=\"jsDelivr hits\"\u003e\n\u003cimg src=\"https://data.jsdelivr.com/v1/package/npm/simple-methodize-x/badge?style=rounded\"\n  alt=\"jsDelivr hits\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://bettercodehub.com/results/Xotic750/simple-methodize-x\"\n  title=\"bettercodehub score\"\u003e\n\u003cimg src=\"https://bettercodehub.com/edge/badge/Xotic750/simple-methodize-x?branch=master\"\n  alt=\"bettercodehub score\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://coveralls.io/github/Xotic750/simple-methodize-x?branch=master\"\n  title=\"Coverage Status\"\u003e\n\u003cimg src=\"https://coveralls.io/repos/github/Xotic750/simple-methodize-x/badge.svg?branch=master\"\n  alt=\"Coverage Status\" height=\"18\"\u003e\n\u003c/a\u003e\n\n\u003ca name=\"module_simple-methodize-x\"\u003e\u003c/a\u003e\n\n## simple-methodize-x\n\nMethodize a prototype method. Compliant to 8 arguments.\n\n\u003ca name=\"exp_module_simple-methodize-x--module.exports\"\u003e\u003c/a\u003e\n\n### `module.exports` ⇒ \u003ccode\u003e\\*\u003c/code\u003e ⏏\n\nMethodize a prototype method. Compliant to 8 arguments.\n\n**Kind**: Exported member  \n**Returns**: \u003ccode\u003eFunction\u003c/code\u003e - The static method.\n**Throws**:\n\n- \u003ccode\u003eTypeError\u003c/code\u003e If prototypeMethod is not a function.\n\n| Param           | Type                  | Description           |\n| --------------- | --------------------- | --------------------- |\n| prototypeMethod | \u003ccode\u003eFunction\u003c/code\u003e | The prototype method. |\n\n**Example**\n\n```js\nimport methodize from 'simple-methodize-x';\n\nconst push = methodize([].push);\nconst array = [];\npush(array, 1);\npush(array, 2);\nconsole.log(array); // [1, 2]\n```\n","homepage":"https://github.com/Xotic750/simple-methodize-x","trustScore":14,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":4,"dependent_repositories":2,"stars":0,"contributors":0,"subscribers":0,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":14},"versions":[{"versionNumber":"1.0.0","timestamp":"2019-08-16T12:44:08.690Z","trustScore":14,"dependencies":[{"packageName":"simple-bind-x","version":"^1.0.0"}]},{"versionNumber":"1.0.1","timestamp":"2019-08-16T15:13:58.122Z","trustScore":14,"dependencies":[{"packageName":"simple-call-x","version":"^1.0.0"}]},{"versionNumber":"1.0.2","timestamp":"2019-08-16T19:21:50.695Z","trustScore":14,"dependencies":[{"packageName":"simple-call-x","version":"^1.0.1"},{"packageName":"util-pusher-x","version":"^1.0.1"}]},{"versionNumber":"1.0.3","timestamp":"2019-08-20T18:59:00.030Z","trustScore":14,"dependencies":[{"packageName":"simple-call-x","version":"^1.0.2"},{"packageName":"util-pusher-x","version":"^1.0.2"}]},{"versionNumber":"1.0.4","timestamp":"2019-08-28T16:35:18.409Z","trustScore":13,"dependencies":[{"packageName":"simple-call-x","version":"^1.0.3"},{"packageName":"util-pusher-x","version":"^1.0.3"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"simple-methodize-x"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

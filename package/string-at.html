@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb0675da28b82fef5a67a24&quot;,
+  &quot;id&quot;: &quot;string-at&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:25:15&quot;,
+  &quot;packageName&quot;: &quot;string-at&quot;,
+  &quot;description&quot;: &quot;A robust &amp; optimized ES3-compatible polyfill for the `String.prototype.at` proposal for ECMAScript 6/7 - based on https://mths.be/at&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/ljharb/string-at.git&quot;
+  },
+  &quot;readme&quot;: &quot;# string-at &lt;sup&gt;[![Version Badge][2]][1]&lt;/sup&gt;\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nA robust &amp; optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6/7](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).\n\nThis code is almost entirely copied from @mathiasbynens&#x27;s excellent polyfill at https://mths.be/at - I created this one so that it did not automatically modify `String.prototype`, and so that it would fit in more neatly with the `es7-shim`.\n\nUse it as a standalone function, or call its `shim` method to install it as a polyfill.\n\n## Example\n\n```js\nvar at = require(&#x27;string-at&#x27;);\nvar assert = require(&#x27;assert&#x27;);\n\nvar surrogatePair = &#x27;\\uD834\\uDF06 abc&#x27;; // a surrogate pair\nassert(surrogatePair.length === 6);\nassert(at(surrogatePair, 0) === &#x27;\\uD834\\uDF06&#x27;);\nassert(at(surrogatePair, 1) === &#x27;\\uDF06&#x27;);\n\nvar i = 0;\nvar str = &#x27;&#x27;;\nwhile (str.length &lt; surrogatePair.length) {\n\tstr += at(surrogatePair, str.length);\n\ti += 1;\n}\nassert(str === surrogatePair);\nassert(i === 4); // 4 code points\nassert(str.length === 6); // 6 \&quot;characters\&quot;\n\nat.shim();\nassert(surrogatePair.at(0) === at(surrogatePair, 0));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/string-at\n[2]: http://versionbadg.es/ljharb/string-at.svg\n[3]: https://travis-ci.org/ljharb/string-at.svg\n[4]: https://travis-ci.org/ljharb/string-at\n[5]: https://david-dm.org/ljharb/string-at.svg\n[6]: https://david-dm.org/ljharb/string-at\n[7]: https://david-dm.org/ljharb/string-at/dev-status.svg\n[8]: https://david-dm.org/ljharb/string-at#info=devDependencies\n[9]: https://ci.testling.com/ljharb/string-at.png\n[10]: https://ci.testling.com/ljharb/string-at\n[11]: https://nodei.co/npm/string-at.png?downloads=true&amp;stars=true\n[license-image]: http://img.shields.io/npm/l/string-at.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/string-at.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=string-at\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/ljharb/string-at#readme&quot;,
+  &quot;trustScore&quot;: 11,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 0,
+    &quot;dependent_repositories&quot;: 2,
+    &quot;stars&quot;: 1,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 0,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 11
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-03-20T10:38:16.839Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;define-properties&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;es-abstract&quot;,
+          &quot;version&quot;: &quot;^1.2.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;function-bind&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-23T23:57:34.261Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;define-properties&quot;,
+          &quot;version&quot;: &quot;^1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;es-abstract&quot;,
+          &quot;version&quot;: &quot;^1.2.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;function-bind&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-12-19T05:56:20.648Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;define-properties&quot;,
+          &quot;version&quot;: &quot;^1.1.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;es-abstract&quot;,
+          &quot;version&quot;: &quot;^1.17.0-next.1&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb0675da28b82fef5a67a24","id":"string-at","crawlTimestamp":"14/11/2020 23:25:15","packageName":"string-at","description":"A robust \u0026 optimized ES3-compatible polyfill for the `String.prototype.at` proposal for ECMAScript 6/7 - based on https://mths.be/at","repository":{"type":"git","url":"git://github.com/ljharb/string-at.git"},"readme":"# string-at \u003csup\u003e[![Version Badge][2]][1]\u003c/sup\u003e\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nA robust \u0026 optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6/7](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).\n\nThis code is almost entirely copied from @mathiasbynens's excellent polyfill at https://mths.be/at - I created this one so that it did not automatically modify `String.prototype`, and so that it would fit in more neatly with the `es7-shim`.\n\nUse it as a standalone function, or call its `shim` method to install it as a polyfill.\n\n## Example\n\n```js\nvar at = require('string-at');\nvar assert = require('assert');\n\nvar surrogatePair = '\\uD834\\uDF06 abc'; // a surrogate pair\nassert(surrogatePair.length === 6);\nassert(at(surrogatePair, 0) === '\\uD834\\uDF06');\nassert(at(surrogatePair, 1) === '\\uDF06');\n\nvar i = 0;\nvar str = '';\nwhile (str.length \u003c surrogatePair.length) {\n\tstr += at(surrogatePair, str.length);\n\ti += 1;\n}\nassert(str === surrogatePair);\nassert(i === 4); // 4 code points\nassert(str.length === 6); // 6 \"characters\"\n\nat.shim();\nassert(surrogatePair.at(0) === at(surrogatePair, 0));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/string-at\n[2]: http://versionbadg.es/ljharb/string-at.svg\n[3]: https://travis-ci.org/ljharb/string-at.svg\n[4]: https://travis-ci.org/ljharb/string-at\n[5]: https://david-dm.org/ljharb/string-at.svg\n[6]: https://david-dm.org/ljharb/string-at\n[7]: https://david-dm.org/ljharb/string-at/dev-status.svg\n[8]: https://david-dm.org/ljharb/string-at#info=devDependencies\n[9]: https://ci.testling.com/ljharb/string-at.png\n[10]: https://ci.testling.com/ljharb/string-at\n[11]: https://nodei.co/npm/string-at.png?downloads=true\u0026stars=true\n[license-image]: http://img.shields.io/npm/l/string-at.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/string-at.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=string-at\n","homepage":"https://github.com/ljharb/string-at#readme","trustScore":11,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":0,"dependent_repositories":2,"stars":1,"contributors":0,"subscribers":0,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":11},"versions":[{"versionNumber":"1.0.0","timestamp":"2015-03-20T10:38:16.839Z","trustScore":13,"dependencies":[{"packageName":"define-properties","version":"^1.0.1"},{"packageName":"es-abstract","version":"^1.2.0"},{"packageName":"function-bind","version":"^1.0.2"}]},{"versionNumber":"1.0.1","timestamp":"2015-05-23T23:57:34.261Z","trustScore":11,"dependencies":[{"packageName":"define-properties","version":"^1.0.1"},{"packageName":"es-abstract","version":"^1.2.1"},{"packageName":"function-bind","version":"^1.0.2"}]},{"versionNumber":"1.1.0","timestamp":"2019-12-19T05:56:20.648Z","trustScore":11,"dependencies":[{"packageName":"define-properties","version":"^1.1.3"},{"packageName":"es-abstract","version":"^1.17.0-next.1"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"string-at"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

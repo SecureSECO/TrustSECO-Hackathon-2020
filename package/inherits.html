@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb05c2477b543d8a4c7df91&quot;,
+  &quot;id&quot;: &quot;inherits&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 22:37:23&quot;,
+  &quot;packageName&quot;: &quot;inherits&quot;,
+  &quot;description&quot;: &quot;Browser-friendly inheritance fully compatible with standard node.js inherits()&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/isaacs/inherits.git&quot;
+  },
+  &quot;readme&quot;: &quot;Browser-friendly inheritance fully compatible with standard node.js\n[inherits](http://nodejs.org/api/util.html#util_util_inherits_constructor_superconstructor).\n\nThis package exports standard `inherits` from node.js `util` module in\nnode environment, but also provides alternative browser-friendly\nimplementation through [browser\nfield](https://gist.github.com/shtylman/4339901). Alternative\nimplementation is a literal copy of standard one located in standalone\nmodule to avoid requiring of `util`. It also has a shim for old\nbrowsers with no `Object.create` support.\n\nWhile keeping you sure you are using standard `inherits`\nimplementation in node.js environment, it allows bundlers such as\n[browserify](https://github.com/substack/node-browserify) to not\ninclude full `util` package to your client code if all you need is\njust `inherits` function. It worth, because browser shim for `util`\npackage is large and `inherits` is often the single function you need\nfrom it.\n\nIt&#x27;s recommended to use this package instead of\n`require(&#x27;util&#x27;).inherits` for any code that has chances to be used\nnot only in node.js but in browser too.\n\n## usage\n\n```js\nvar inherits = require(&#x27;inherits&#x27;);\n// then use exactly as the standard one\n```\n\n## note on version ~1.0\n\nVersion ~1.0 had completely different motivation and is not compatible\nneither with 2.0 nor with standard node.js `inherits`.\n\nIf you are using version ~1.0 and planning to switch to ~2.0, be\ncareful:\n\n* new version uses `super_` instead of `super` for referencing\n  superclass\n* new version overwrites current prototype while old one preserves any\n  existing fields on it\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/isaacs/inherits#readme&quot;,
+  &quot;trustScore&quot;: 25,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 6,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 3,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 25
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2011-04-07T00:35:15.718Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-05-16T14:44:54.523Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2013-08-19T22:10:20.463Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T22:12:12.252Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-27T19:36:46.817Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2016-09-08T00:49:38.520Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2019-06-19T20:18:52.465Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb05c2477b543d8a4c7df91","id":"inherits","crawlTimestamp":"14/11/2020 22:37:23","packageName":"inherits","description":"Browser-friendly inheritance fully compatible with standard node.js inherits()","repository":{"type":"git","url":"git://github.com/isaacs/inherits.git"},"readme":"Browser-friendly inheritance fully compatible with standard node.js\n[inherits](http://nodejs.org/api/util.html#util_util_inherits_constructor_superconstructor).\n\nThis package exports standard `inherits` from node.js `util` module in\nnode environment, but also provides alternative browser-friendly\nimplementation through [browser\nfield](https://gist.github.com/shtylman/4339901). Alternative\nimplementation is a literal copy of standard one located in standalone\nmodule to avoid requiring of `util`. It also has a shim for old\nbrowsers with no `Object.create` support.\n\nWhile keeping you sure you are using standard `inherits`\nimplementation in node.js environment, it allows bundlers such as\n[browserify](https://github.com/substack/node-browserify) to not\ninclude full `util` package to your client code if all you need is\njust `inherits` function. It worth, because browser shim for `util`\npackage is large and `inherits` is often the single function you need\nfrom it.\n\nIt's recommended to use this package instead of\n`require('util').inherits` for any code that has chances to be used\nnot only in node.js but in browser too.\n\n## usage\n\n```js\nvar inherits = require('inherits');\n// then use exactly as the standard one\n```\n\n## note on version ~1.0\n\nVersion ~1.0 had completely different motivation and is not compatible\nneither with 2.0 nor with standard node.js `inherits`.\n\nIf you are using version ~1.0 and planning to switch to ~2.0, be\ncareful:\n\n* new version uses `super_` instead of `super` for referencing\n  superclass\n* new version overwrites current prototype while old one preserves any\n  existing fields on it\n","homepage":"https://github.com/isaacs/inherits#readme","trustScore":25,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":6,"dependent_repositories":6,"stars":3,"contributors":0,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":25},"versions":[{"versionNumber":"1.0.0","timestamp":"2011-04-07T00:35:15.718Z","trustScore":25,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2013-05-16T14:44:54.523Z","trustScore":24,"dependencies":[]},{"versionNumber":"2.0.1","timestamp":"2013-08-19T22:10:20.463Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.0.1","timestamp":"2015-08-26T22:12:12.252Z","trustScore":19,"dependencies":[]},{"versionNumber":"1.0.2","timestamp":"2015-08-27T19:36:46.817Z","trustScore":24,"dependencies":[]},{"versionNumber":"2.0.3","timestamp":"2016-09-08T00:49:38.520Z","trustScore":22,"dependencies":[]},{"versionNumber":"2.0.4","timestamp":"2019-06-19T20:18:52.465Z","trustScore":28,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"inherits"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb06791a28b82fef5a67a4c&quot;,
+  &quot;id&quot;: &quot;through&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:26:08&quot;,
+  &quot;packageName&quot;: &quot;through&quot;,
+  &quot;description&quot;: &quot;simplified stream construction&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/dominictarr/through.git&quot;
+  },
+  &quot;readme&quot;: &quot;#through\n\n[![build status](https://secure.travis-ci.org/dominictarr/through.png)](http://travis-ci.org/dominictarr/through)\n[![testling badge](https://ci.testling.com/dominictarr/through.png)](https://ci.testling.com/dominictarr/through)\n\nEasy way to create a `Stream` that is both `readable` and `writable`. \n\n* Pass in optional `write` and `end` methods.\n* `through` takes care of pause/resume logic if you use `this.queue(data)` instead of `this.emit(&#x27;data&#x27;, data)`.\n* Use `this.pause()` and `this.resume()` to manage flow.\n* Check `this.paused` to see current flow state. (`write` always returns `!this.paused`).\n\nThis function is the basis for most of the synchronous streams in \n[event-stream](http://github.com/dominictarr/event-stream).\n\n``` js\nvar through = require(&#x27;through&#x27;)\n\nthrough(function write(data) {\n    this.queue(data) //data *must* not be null\n  },\n  function end () { //optional\n    this.queue(null)\n  })\n```\n\nOr, can also be used _without_ buffering on pause, use `this.emit(&#x27;data&#x27;, data)`,\nand this.emit(&#x27;end&#x27;)\n\n``` js\nvar through = require(&#x27;through&#x27;)\n\nthrough(function write(data) {\n    this.emit(&#x27;data&#x27;, data)\n    //this.pause() \n  },\n  function end () { //optional\n    this.emit(&#x27;end&#x27;)\n  })\n```\n\n## Extended Options\n\nYou will probably not need these 99% of the time.\n\n### autoDestroy=false\n\nBy default, `through` emits close when the writable\nand readable side of the stream has ended.\nIf that is not desired, set `autoDestroy=false`.\n\n``` js\nvar through = require(&#x27;through&#x27;)\n\n//like this\nvar ts = through(write, end, {autoDestroy: false})\n//or like this\nvar ts = through(write, end)\nts.autoDestroy = false\n```\n\n## License\n\nMIT / Apache2\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/dominictarr/through&quot;,
+  &quot;trustScore&quot;: 28,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 8,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 3,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 28
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-04T14:09:48.188Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-04T14:14:38.160Z&quot;,
+      &quot;trustScore&quot;: 31,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-04T14:55:22.509Z&quot;,
+      &quot;trustScore&quot;: 35,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-12T03:04:45.402Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-22T18:12:52.947Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-22T19:24:58.408Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-07-22T20:56:34.166Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.3&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-07T01:43:12.512Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.4&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-07T15:49:31.336Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-08-31T09:38:50.600Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-09-15T11:48:53.613Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-10-11T13:49:59.968Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-11-20T17:56:39.995Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-11-26T05:30:11.797Z&quot;,
+      &quot;trustScore&quot;: 30,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2012-11-28T06:56:46.753Z&quot;,
+      &quot;trustScore&quot;: 33,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2013-02-11T08:24:48.695Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.1&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-03T02:09:41.237Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.2&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-12T05:18:11.703Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.4&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-13T07:45:07.144Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.5&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-13T08:39:33.743Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.6&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-13T08:44:43.459Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.7&quot;,
+      &quot;timestamp&quot;: &quot;2013-03-15T05:52:05.447Z&quot;,
+      &quot;trustScore&quot;: 32,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.1&quot;,
+      &quot;timestamp&quot;: &quot;2013-04-13T10:57:25.016Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.2&quot;,
+      &quot;timestamp&quot;: &quot;2013-04-24T15:28:51.858Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.3&quot;,
+      &quot;timestamp&quot;: &quot;2013-04-24T22:56:02.409Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.4&quot;,
+      &quot;timestamp&quot;: &quot;2013-04-29T08:35:05.575Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.6&quot;,
+      &quot;timestamp&quot;: &quot;2014-09-16T07:00:00.673Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.7&quot;,
+      &quot;timestamp&quot;: &quot;2015-04-06T05:00:51.802Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.8&quot;,
+      &quot;timestamp&quot;: &quot;2015-07-03T13:38:39.650Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb06791a28b82fef5a67a4c","id":"through","crawlTimestamp":"14/11/2020 23:26:08","packageName":"through","description":"simplified stream construction","repository":{"type":"git","url":"git+https://github.com/dominictarr/through.git"},"readme":"#through\n\n[![build status](https://secure.travis-ci.org/dominictarr/through.png)](http://travis-ci.org/dominictarr/through)\n[![testling badge](https://ci.testling.com/dominictarr/through.png)](https://ci.testling.com/dominictarr/through)\n\nEasy way to create a `Stream` that is both `readable` and `writable`. \n\n* Pass in optional `write` and `end` methods.\n* `through` takes care of pause/resume logic if you use `this.queue(data)` instead of `this.emit('data', data)`.\n* Use `this.pause()` and `this.resume()` to manage flow.\n* Check `this.paused` to see current flow state. (`write` always returns `!this.paused`).\n\nThis function is the basis for most of the synchronous streams in \n[event-stream](http://github.com/dominictarr/event-stream).\n\n``` js\nvar through = require('through')\n\nthrough(function write(data) {\n    this.queue(data) //data *must* not be null\n  },\n  function end () { //optional\n    this.queue(null)\n  })\n```\n\nOr, can also be used _without_ buffering on pause, use `this.emit('data', data)`,\nand this.emit('end')\n\n``` js\nvar through = require('through')\n\nthrough(function write(data) {\n    this.emit('data', data)\n    //this.pause() \n  },\n  function end () { //optional\n    this.emit('end')\n  })\n```\n\n## Extended Options\n\nYou will probably not need these 99% of the time.\n\n### autoDestroy=false\n\nBy default, `through` emits close when the writable\nand readable side of the stream has ended.\nIf that is not desired, set `autoDestroy=false`.\n\n``` js\nvar through = require('through')\n\n//like this\nvar ts = through(write, end, {autoDestroy: false})\n//or like this\nvar ts = through(write, end)\nts.autoDestroy = false\n```\n\n## License\n\nMIT / Apache2\n","homepage":"https://github.com/dominictarr/through","trustScore":28,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":8,"dependent_repositories":6,"stars":3,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":28},"versions":[{"versionNumber":"0.0.1","timestamp":"2012-07-04T14:09:48.188Z","trustScore":29,"dependencies":[]},{"versionNumber":"0.0.2","timestamp":"2012-07-04T14:14:38.160Z","trustScore":31,"dependencies":[]},{"versionNumber":"0.0.3","timestamp":"2012-07-04T14:55:22.509Z","trustScore":35,"dependencies":[]},{"versionNumber":"0.0.4","timestamp":"2012-07-12T03:04:45.402Z","trustScore":32,"dependencies":[]},{"versionNumber":"0.1.0","timestamp":"2012-07-22T18:12:52.947Z","trustScore":26,"dependencies":[]},{"versionNumber":"0.1.1","timestamp":"2012-07-22T19:24:58.408Z","trustScore":29,"dependencies":[]},{"versionNumber":"0.1.2","timestamp":"2012-07-22T20:56:34.166Z","trustScore":25,"dependencies":[]},{"versionNumber":"0.1.3","timestamp":"2012-08-07T01:43:12.512Z","trustScore":29,"dependencies":[]},{"versionNumber":"0.1.4","timestamp":"2012-08-07T15:49:31.336Z","trustScore":30,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2012-08-31T09:38:50.600Z","trustScore":28,"dependencies":[]},{"versionNumber":"1.1.0","timestamp":"2012-09-15T11:48:53.613Z","trustScore":28,"dependencies":[]},{"versionNumber":"1.1.1","timestamp":"2012-10-11T13:49:59.968Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.1.2","timestamp":"2012-11-20T17:56:39.995Z","trustScore":28,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2012-11-26T05:30:11.797Z","trustScore":30,"dependencies":[]},{"versionNumber":"2.1.0","timestamp":"2012-11-28T06:56:46.753Z","trustScore":33,"dependencies":[]},{"versionNumber":"2.2.0","timestamp":"2013-02-11T08:24:48.695Z","trustScore":32,"dependencies":[]},{"versionNumber":"2.2.1","timestamp":"2013-03-03T02:09:41.237Z","trustScore":27,"dependencies":[]},{"versionNumber":"2.2.2","timestamp":"2013-03-12T05:18:11.703Z","trustScore":32,"dependencies":[]},{"versionNumber":"2.2.4","timestamp":"2013-03-13T07:45:07.144Z","trustScore":26,"dependencies":[]},{"versionNumber":"2.2.5","timestamp":"2013-03-13T08:39:33.743Z","trustScore":28,"dependencies":[]},{"versionNumber":"2.2.6","timestamp":"2013-03-13T08:44:43.459Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.2.7","timestamp":"2013-03-15T05:52:05.447Z","trustScore":32,"dependencies":[]},{"versionNumber":"2.3.1","timestamp":"2013-04-13T10:57:25.016Z","trustScore":23,"dependencies":[]},{"versionNumber":"2.3.2","timestamp":"2013-04-24T15:28:51.858Z","trustScore":27,"dependencies":[]},{"versionNumber":"2.3.3","timestamp":"2013-04-24T22:56:02.409Z","trustScore":28,"dependencies":[]},{"versionNumber":"2.3.4","timestamp":"2013-04-29T08:35:05.575Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.3.6","timestamp":"2014-09-16T07:00:00.673Z","trustScore":29,"dependencies":[]},{"versionNumber":"2.3.7","timestamp":"2015-04-06T05:00:51.802Z","trustScore":27,"dependencies":[]},{"versionNumber":"2.3.8","timestamp":"2015-07-03T13:38:39.650Z","trustScore":29,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"through"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb05c1f77b543d8a4c7df81&quot;,
+  &quot;id&quot;: &quot;universalify&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 22:37:18&quot;,
+  &quot;packageName&quot;: &quot;universalify&quot;,
+  &quot;description&quot;: &quot;Make a callback- or promise-based function support both promises and callbacks.&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/RyanZim/universalify.git&quot;
+  },
+  &quot;readme&quot;: &quot;# universalify\n\n[![Travis branch](https://img.shields.io/travis/RyanZim/universalify/master.svg)](https://travis-ci.org/RyanZim/universalify)\n![Coveralls github branch](https://img.shields.io/coveralls/github/RyanZim/universalify/master.svg)\n![npm](https://img.shields.io/npm/dm/universalify.svg)\n![npm](https://img.shields.io/npm/l/universalify.svg)\n\nMake a callback- or promise-based function support both promises and callbacks.\n\nUses the native promise implementation.\n\n## Installation\n\n```bash\nnpm install universalify\n```\n\n## API\n\n### `universalify.fromCallback(fn)`\n\nTakes a callback-based function to universalify, and returns the universalified  function.\n\nFunction must take a callback as the last parameter that will be called with the signature `(error, result)`. `universalify` does not support calling the callback with three or more arguments, and does not ensure that the callback is only called once.\n\n```js\nfunction callbackFn (n, cb) {\n  setTimeout(() =&gt; cb(null, n), 15)\n}\n\nconst fn = universalify.fromCallback(callbackFn)\n\n// Works with Promises:\nfn(&#x27;Hello World!&#x27;)\n.then(result =&gt; console.log(result)) // -&gt; Hello World!\n.catch(error =&gt; console.error(error))\n\n// Works with Callbacks:\nfn(&#x27;Hi!&#x27;, (error, result) =&gt; {\n  if (error) return console.error(error)\n  console.log(result)\n  // -&gt; Hi!\n})\n```\n\n### `universalify.fromPromise(fn)`\n\nTakes a promise-based function to universalify, and returns the universalified  function.\n\nFunction must return a valid JS promise. `universalify` does not ensure that a valid promise is returned.\n\n```js\nfunction promiseFn (n) {\n  return new Promise(resolve =&gt; {\n    setTimeout(() =&gt; resolve(n), 15)\n  })\n}\n\nconst fn = universalify.fromPromise(promiseFn)\n\n// Works with Promises:\nfn(&#x27;Hello World!&#x27;)\n.then(result =&gt; console.log(result)) // -&gt; Hello World!\n.catch(error =&gt; console.error(error))\n\n// Works with Callbacks:\nfn(&#x27;Hi!&#x27;, (error, result) =&gt; {\n  if (error) return console.error(error)\n  console.log(result)\n  // -&gt; Hi!\n})\n```\n\n## License\n\nMIT\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/RyanZim/universalify#readme&quot;,
+  &quot;trustScore&quot;: 23,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 1,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 4,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 23
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2017-04-08T17:28:40.301Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-04-22T14:32:41.242Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2017-07-20T14:41:09.194Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2018-06-20T11:17:11.369Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-02-19T16:24:46.080Z&quot;,
+      &quot;trustScore&quot;: 17,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-03-06T21:39:56.588Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2020-07-25T13:35:08.897Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb05c1f77b543d8a4c7df81","id":"universalify","crawlTimestamp":"14/11/2020 22:37:18","packageName":"universalify","description":"Make a callback- or promise-based function support both promises and callbacks.","repository":{"type":"git","url":"git+https://github.com/RyanZim/universalify.git"},"readme":"# universalify\n\n[![Travis branch](https://img.shields.io/travis/RyanZim/universalify/master.svg)](https://travis-ci.org/RyanZim/universalify)\n![Coveralls github branch](https://img.shields.io/coveralls/github/RyanZim/universalify/master.svg)\n![npm](https://img.shields.io/npm/dm/universalify.svg)\n![npm](https://img.shields.io/npm/l/universalify.svg)\n\nMake a callback- or promise-based function support both promises and callbacks.\n\nUses the native promise implementation.\n\n## Installation\n\n```bash\nnpm install universalify\n```\n\n## API\n\n### `universalify.fromCallback(fn)`\n\nTakes a callback-based function to universalify, and returns the universalified  function.\n\nFunction must take a callback as the last parameter that will be called with the signature `(error, result)`. `universalify` does not support calling the callback with three or more arguments, and does not ensure that the callback is only called once.\n\n```js\nfunction callbackFn (n, cb) {\n  setTimeout(() =\u003e cb(null, n), 15)\n}\n\nconst fn = universalify.fromCallback(callbackFn)\n\n// Works with Promises:\nfn('Hello World!')\n.then(result =\u003e console.log(result)) // -\u003e Hello World!\n.catch(error =\u003e console.error(error))\n\n// Works with Callbacks:\nfn('Hi!', (error, result) =\u003e {\n  if (error) return console.error(error)\n  console.log(result)\n  // -\u003e Hi!\n})\n```\n\n### `universalify.fromPromise(fn)`\n\nTakes a promise-based function to universalify, and returns the universalified  function.\n\nFunction must return a valid JS promise. `universalify` does not ensure that a valid promise is returned.\n\n```js\nfunction promiseFn (n) {\n  return new Promise(resolve =\u003e {\n    setTimeout(() =\u003e resolve(n), 15)\n  })\n}\n\nconst fn = universalify.fromPromise(promiseFn)\n\n// Works with Promises:\nfn('Hello World!')\n.then(result =\u003e console.log(result)) // -\u003e Hello World!\n.catch(error =\u003e console.error(error))\n\n// Works with Callbacks:\nfn('Hi!', (error, result) =\u003e {\n  if (error) return console.error(error)\n  console.log(result)\n  // -\u003e Hi!\n})\n```\n\n## License\n\nMIT\n","homepage":"https://github.com/RyanZim/universalify#readme","trustScore":23,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":1,"not_brand_new":1,"one_point_oh":1,"dependent_projects":4,"dependent_repositories":6,"stars":2,"contributors":0,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":23},"versions":[{"versionNumber":"0.0.1","timestamp":"2017-04-08T17:28:40.301Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.1.0","timestamp":"2017-04-22T14:32:41.242Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.1.1","timestamp":"2017-07-20T14:41:09.194Z","trustScore":25,"dependencies":[]},{"versionNumber":"0.1.2","timestamp":"2018-06-20T11:17:11.369Z","trustScore":25,"dependencies":[]},{"versionNumber":"0.2.0","timestamp":"2020-02-19T16:24:46.080Z","trustScore":17,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2020-03-06T21:39:56.588Z","trustScore":19,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2020-07-25T13:35:08.897Z","trustScore":11,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"universalify"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

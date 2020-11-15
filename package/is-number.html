@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb066eaa28b82fef5a679d1&quot;,
+  &quot;id&quot;: &quot;is-number&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:23:21&quot;,
+  &quot;packageName&quot;: &quot;is-number&quot;,
+  &quot;description&quot;: &quot;Returns true if a number or string value is a finite number. Useful for regex matches, parsing, user input, etc.&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/jonschlinkert/is-number.git&quot;
+  },
+  &quot;readme&quot;: &quot;# is-number [![NPM version](https://img.shields.io/npm/v/is-number.svg?style=flat)](https://www.npmjs.com/package/is-number) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![NPM total downloads](https://img.shields.io/npm/dt/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-number.svg?style=flat&amp;label=Travis)](https://travis-ci.org/jonschlinkert/is-number)\n\n&gt; Returns true if the value is a finite number.\n\nPlease consider following this project&#x27;s author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-number\n```\n\n## Why is this needed?\n\nIn JavaScript, it&#x27;s not always as straightforward as it should be to reliably check if a value is a number. It&#x27;s common for devs to use `+`, `-`, or `Number()` to cast a string value to a number (for example, when values are returned from user input, regex matches, parsers, etc). But there are many non-intuitive edge cases that yield unexpected results:\n\n```js\nconsole.log(+[]); //=&gt; 0\nconsole.log(+&#x27;&#x27;); //=&gt; 0\nconsole.log(+&#x27;   &#x27;); //=&gt; 0\nconsole.log(typeof NaN); //=&gt; &#x27;number&#x27;\n```\n\nThis library offers a performant way to smooth out edge cases like these.\n\n## Usage\n\n```js\nconst isNumber = require(&#x27;is-number&#x27;);\n```\n\nSee the [tests](./test.js) for more examples.\n\n### true\n\n```js\nisNumber(5e3);               // true\nisNumber(0xff);              // true\nisNumber(-1.1);              // true\nisNumber(0);                 // true\nisNumber(1);                 // true\nisNumber(1.1);               // true\nisNumber(10);                // true\nisNumber(10.10);             // true\nisNumber(100);               // true\nisNumber(&#x27;-1.1&#x27;);            // true\nisNumber(&#x27;0&#x27;);               // true\nisNumber(&#x27;012&#x27;);             // true\nisNumber(&#x27;0xff&#x27;);            // true\nisNumber(&#x27;1&#x27;);               // true\nisNumber(&#x27;1.1&#x27;);             // true\nisNumber(&#x27;10&#x27;);              // true\nisNumber(&#x27;10.10&#x27;);           // true\nisNumber(&#x27;100&#x27;);             // true\nisNumber(&#x27;5e3&#x27;);             // true\nisNumber(parseInt(&#x27;012&#x27;));   // true\nisNumber(parseFloat(&#x27;012&#x27;)); // true\n```\n\n### False\n\nEverything else is false, as you would expect:\n\n```js\nisNumber(Infinity);          // false\nisNumber(NaN);               // false\nisNumber(null);              // false\nisNumber(undefined);         // false\nisNumber(&#x27;&#x27;);                // false\nisNumber(&#x27;   &#x27;);             // false\nisNumber(&#x27;foo&#x27;);             // false\nisNumber([1]);               // false\nisNumber([]);                // false\nisNumber(function () {});    // false\nisNumber({});                // false\n```\n\n## Release history\n\n### 7.0.0\n\n* Refactor. Now uses `.isFinite` if it exists.\n* Performance is about the same as v6.0 when the value is a string or number. But it&#x27;s now 3x-4x faster when the value is not a string or number.\n\n### 6.0.0\n\n* Optimizations, thanks to @benaadams.\n\n### 5.0.0\n\n**Breaking changes**\n\n* removed support for `instanceof Number` and `instanceof String`\n\n## Benchmarks\n\nAs with all benchmarks, take these with a grain of salt. See the [benchmarks](./benchmark/index.js) for more detail.\n\n```\n# all\nv7.0 x 413,222 ops/sec ±2.02% (86 runs sampled)\nv6.0 x 111,061 ops/sec ±1.29% (85 runs sampled)\nparseFloat x 317,596 ops/sec ±1.36% (86 runs sampled)\nfastest is &#x27;v7.0&#x27;\n\n# string\nv7.0 x 3,054,496 ops/sec ±1.05% (89 runs sampled)\nv6.0 x 2,957,781 ops/sec ±0.98% (88 runs sampled)\nparseFloat x 3,071,060 ops/sec ±1.13% (88 runs sampled)\nfastest is &#x27;parseFloat,v7.0&#x27;\n\n# number\nv7.0 x 3,146,895 ops/sec ±0.89% (89 runs sampled)\nv6.0 x 3,214,038 ops/sec ±1.07% (89 runs sampled)\nparseFloat x 3,077,588 ops/sec ±1.07% (87 runs sampled)\nfastest is &#x27;v6.0&#x27;\n```\n\n## About\n\n&lt;details&gt;\n&lt;summary&gt;&lt;strong&gt;Contributing&lt;/strong&gt;&lt;/summary&gt;\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n&lt;/details&gt;\n\n&lt;details&gt;\n&lt;summary&gt;&lt;strong&gt;Running Tests&lt;/strong&gt;&lt;/summary&gt;\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install &amp;&amp; npm test\n```\n\n&lt;/details&gt;\n\n&lt;details&gt;\n&lt;summary&gt;&lt;strong&gt;Building docs&lt;/strong&gt;&lt;/summary&gt;\n\n_(This project&#x27;s readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don&#x27;t edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme &amp;&amp; verb\n```\n\n&lt;/details&gt;\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-plain-object](https://www.npmjs.com/package/is-plain-object): Returns true if an object was created by the `Object` constructor. | [homepage](https://github.com/jonschlinkert/is-plain-object \&quot;Returns true if an object was created by the `Object` constructor.\&quot;)\n* [is-primitive](https://www.npmjs.com/package/is-primitive): Returns `true` if the value is a primitive.  | [homepage](https://github.com/jonschlinkert/is-primitive \&quot;Returns `true` if the value is a primitive. \&quot;)\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \&quot;Returns true if the value is an object and not an array or null.\&quot;)\n* [kind-of](https://www.npmjs.com/package/kind-of): Get the native type of a value. | [homepage](https://github.com/jonschlinkert/kind-of \&quot;Get the native type of a value.\&quot;)\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 49 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 5 | [charlike-old](https://github.com/charlike-old) |\n| 1 | [benaadams](https://github.com/benaadams) |\n| 1 | [realityking](https://github.com/realityking) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on June 15, 2018._&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/jonschlinkert/is-number&quot;,
+  &quot;trustScore&quot;: 25,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 6,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 25
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-09-22T01:58:51.592Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2014-09-22T03:37:27.931Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-01-24T10:16:54.470Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-01-24T10:33:21.598Z&quot;,
+      &quot;trustScore&quot;: 27,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-03-05T18:37:07.633Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-03-05T18:57:33.841Z&quot;,
+      &quot;trustScore&quot;: 28,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-02T08:11:57.926Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-03T04:27:13.630Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;kind-of&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-05-03T05:59:55.976Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;kind-of&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-22T13:56:56.624Z&quot;,
+      &quot;trustScore&quot;: 29,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;kind-of&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2016-09-11T00:51:30.912Z&quot;,
+      &quot;trustScore&quot;: 26,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;kind-of&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;4.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-10-17T05:43:56.559Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;5.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-01-29T03:06:41.225Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;6.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-03-31T17:02:39.953Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;7.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2018-07-04T15:08:58.238Z&quot;,
+      &quot;trustScore&quot;: 25,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb066eaa28b82fef5a679d1","id":"is-number","crawlTimestamp":"14/11/2020 23:23:21","packageName":"is-number","description":"Returns true if a number or string value is a finite number. Useful for regex matches, parsing, user input, etc.","repository":{"type":"git","url":"git+https://github.com/jonschlinkert/is-number.git"},"readme":"# is-number [![NPM version](https://img.shields.io/npm/v/is-number.svg?style=flat)](https://www.npmjs.com/package/is-number) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![NPM total downloads](https://img.shields.io/npm/dt/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-number.svg?style=flat\u0026label=Travis)](https://travis-ci.org/jonschlinkert/is-number)\n\n\u003e Returns true if the value is a finite number.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-number\n```\n\n## Why is this needed?\n\nIn JavaScript, it's not always as straightforward as it should be to reliably check if a value is a number. It's common for devs to use `+`, `-`, or `Number()` to cast a string value to a number (for example, when values are returned from user input, regex matches, parsers, etc). But there are many non-intuitive edge cases that yield unexpected results:\n\n```js\nconsole.log(+[]); //=\u003e 0\nconsole.log(+''); //=\u003e 0\nconsole.log(+'   '); //=\u003e 0\nconsole.log(typeof NaN); //=\u003e 'number'\n```\n\nThis library offers a performant way to smooth out edge cases like these.\n\n## Usage\n\n```js\nconst isNumber = require('is-number');\n```\n\nSee the [tests](./test.js) for more examples.\n\n### true\n\n```js\nisNumber(5e3);               // true\nisNumber(0xff);              // true\nisNumber(-1.1);              // true\nisNumber(0);                 // true\nisNumber(1);                 // true\nisNumber(1.1);               // true\nisNumber(10);                // true\nisNumber(10.10);             // true\nisNumber(100);               // true\nisNumber('-1.1');            // true\nisNumber('0');               // true\nisNumber('012');             // true\nisNumber('0xff');            // true\nisNumber('1');               // true\nisNumber('1.1');             // true\nisNumber('10');              // true\nisNumber('10.10');           // true\nisNumber('100');             // true\nisNumber('5e3');             // true\nisNumber(parseInt('012'));   // true\nisNumber(parseFloat('012')); // true\n```\n\n### False\n\nEverything else is false, as you would expect:\n\n```js\nisNumber(Infinity);          // false\nisNumber(NaN);               // false\nisNumber(null);              // false\nisNumber(undefined);         // false\nisNumber('');                // false\nisNumber('   ');             // false\nisNumber('foo');             // false\nisNumber([1]);               // false\nisNumber([]);                // false\nisNumber(function () {});    // false\nisNumber({});                // false\n```\n\n## Release history\n\n### 7.0.0\n\n* Refactor. Now uses `.isFinite` if it exists.\n* Performance is about the same as v6.0 when the value is a string or number. But it's now 3x-4x faster when the value is not a string or number.\n\n### 6.0.0\n\n* Optimizations, thanks to @benaadams.\n\n### 5.0.0\n\n**Breaking changes**\n\n* removed support for `instanceof Number` and `instanceof String`\n\n## Benchmarks\n\nAs with all benchmarks, take these with a grain of salt. See the [benchmarks](./benchmark/index.js) for more detail.\n\n```\n# all\nv7.0 x 413,222 ops/sec ±2.02% (86 runs sampled)\nv6.0 x 111,061 ops/sec ±1.29% (85 runs sampled)\nparseFloat x 317,596 ops/sec ±1.36% (86 runs sampled)\nfastest is 'v7.0'\n\n# string\nv7.0 x 3,054,496 ops/sec ±1.05% (89 runs sampled)\nv6.0 x 2,957,781 ops/sec ±0.98% (88 runs sampled)\nparseFloat x 3,071,060 ops/sec ±1.13% (88 runs sampled)\nfastest is 'parseFloat,v7.0'\n\n# number\nv7.0 x 3,146,895 ops/sec ±0.89% (89 runs sampled)\nv6.0 x 3,214,038 ops/sec ±1.07% (89 runs sampled)\nparseFloat x 3,077,588 ops/sec ±1.07% (87 runs sampled)\nfastest is 'v6.0'\n```\n\n## About\n\n\u003cdetails\u003e\n\u003csummary\u003e\u003cstrong\u003eContributing\u003c/strong\u003e\u003c/summary\u003e\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n\u003c/details\u003e\n\n\u003cdetails\u003e\n\u003csummary\u003e\u003cstrong\u003eRunning Tests\u003c/strong\u003e\u003c/summary\u003e\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install \u0026\u0026 npm test\n```\n\n\u003c/details\u003e\n\n\u003cdetails\u003e\n\u003csummary\u003e\u003cstrong\u003eBuilding docs\u003c/strong\u003e\u003c/summary\u003e\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme \u0026\u0026 verb\n```\n\n\u003c/details\u003e\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-plain-object](https://www.npmjs.com/package/is-plain-object): Returns true if an object was created by the `Object` constructor. | [homepage](https://github.com/jonschlinkert/is-plain-object \"Returns true if an object was created by the `Object` constructor.\")\n* [is-primitive](https://www.npmjs.com/package/is-primitive): Returns `true` if the value is a primitive.  | [homepage](https://github.com/jonschlinkert/is-primitive \"Returns `true` if the value is a primitive. \")\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \"Returns true if the value is an object and not an array or null.\")\n* [kind-of](https://www.npmjs.com/package/kind-of): Get the native type of a value. | [homepage](https://github.com/jonschlinkert/kind-of \"Get the native type of a value.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 49 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 5 | [charlike-old](https://github.com/charlike-old) |\n| 1 | [benaadams](https://github.com/benaadams) |\n| 1 | [realityking](https://github.com/realityking) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on June 15, 2018._","homepage":"https://github.com/jonschlinkert/is-number","trustScore":25,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":6,"dependent_repositories":6,"stars":2,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":25},"versions":[{"versionNumber":"0.1.0","timestamp":"2014-09-22T01:58:51.592Z","trustScore":24,"dependencies":[]},{"versionNumber":"0.1.1","timestamp":"2014-09-22T03:37:27.931Z","trustScore":26,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2015-01-24T10:16:54.470Z","trustScore":25,"dependencies":[]},{"versionNumber":"1.1.0","timestamp":"2015-01-24T10:33:21.598Z","trustScore":27,"dependencies":[]},{"versionNumber":"1.1.1","timestamp":"2015-03-05T18:37:07.633Z","trustScore":29,"dependencies":[]},{"versionNumber":"1.1.2","timestamp":"2015-03-05T18:57:33.841Z","trustScore":28,"dependencies":[]},{"versionNumber":"2.0.0","timestamp":"2015-05-02T08:11:57.926Z","trustScore":24,"dependencies":[]},{"versionNumber":"2.0.1","timestamp":"2015-05-03T04:27:13.630Z","trustScore":24,"dependencies":[{"packageName":"kind-of","version":"^1.1.0"}]},{"versionNumber":"2.0.2","timestamp":"2015-05-03T05:59:55.976Z","trustScore":23,"dependencies":[{"packageName":"kind-of","version":"^1.1.0"}]},{"versionNumber":"2.1.0","timestamp":"2015-11-22T13:56:56.624Z","trustScore":29,"dependencies":[{"packageName":"kind-of","version":"^3.0.2"}]},{"versionNumber":"3.0.0","timestamp":"2016-09-11T00:51:30.912Z","trustScore":26,"dependencies":[{"packageName":"kind-of","version":"^3.0.2"}]},{"versionNumber":"4.0.0","timestamp":"2017-10-17T05:43:56.559Z","trustScore":22,"dependencies":[]},{"versionNumber":"5.0.0","timestamp":"2018-01-29T03:06:41.225Z","trustScore":23,"dependencies":[]},{"versionNumber":"6.0.0","timestamp":"2018-03-31T17:02:39.953Z","trustScore":25,"dependencies":[]},{"versionNumber":"7.0.0","timestamp":"2018-07-04T15:08:58.238Z","trustScore":25,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"is-number"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb067f1a28b82fef5a67a95&quot;,
+  &quot;id&quot;: &quot;error-ex&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:27:44&quot;,
+  &quot;packageName&quot;: &quot;error-ex&quot;,
+  &quot;description&quot;: &quot;Easy error subclassing and stack customization&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/qix-/node-error-ex.git&quot;
+  },
+  &quot;readme&quot;: &quot;# node-error-ex [![Travis-CI.org Build Status](https://img.shields.io/travis/Qix-/node-error-ex.svg?style=flat-square)](https://travis-ci.org/Qix-/node-error-ex) [![Coveralls.io Coverage Rating](https://img.shields.io/coveralls/Qix-/node-error-ex.svg?style=flat-square)](https://coveralls.io/r/Qix-/node-error-ex)\n&gt; Easily subclass and customize new Error types\n\n## Examples\nTo include in your project:\n```javascript\nvar errorEx = require(&#x27;error-ex&#x27;);\n```\n\nTo create an error message type with a specific name (note, that `ErrorFn.name`\nwill not reflect this):\n```javascript\nvar JSONError = errorEx(&#x27;JSONError&#x27;);\n\nvar err = new JSONError(&#x27;error&#x27;);\nerr.name; //-&gt; JSONError\nthrow err; //-&gt; JSONError: error\n```\n\nTo add a stack line:\n```javascript\nvar JSONError = errorEx(&#x27;JSONError&#x27;, {fileName: errorEx.line(&#x27;in %s&#x27;)});\n\nvar err = new JSONError(&#x27;error&#x27;)\nerr.fileName = &#x27;/a/b/c/foo.json&#x27;;\nthrow err; //-&gt; (line 2)-&gt; in /a/b/c/foo.json\n```\n\nTo append to the error message:\n```javascript\nvar JSONError = errorEx(&#x27;JSONError&#x27;, {fileName: errorEx.append(&#x27;in %s&#x27;)});\n\nvar err = new JSONError(&#x27;error&#x27;);\nerr.fileName = &#x27;/a/b/c/foo.json&#x27;;\nthrow err; //-&gt; JSONError: error in /a/b/c/foo.json\n```\n\n## API\n\n#### `errorEx([name], [properties])`\nCreates a new ErrorEx error type\n\n- `name`: the name of the new type (appears in the error message upon throw;\n  defaults to `Error.name`)\n- `properties`: if supplied, used as a key/value dictionary of properties to\n  use when building up the stack message. Keys are property names that are\n  looked up on the error message, and then passed to function values.\n\t- `line`: if specified and is a function, return value is added as a stack\n    entry (error-ex will indent for you). Passed the property value given\n    the key.\n  - `stack`: if specified and is a function, passed the value of the property\n    using the key, and the raw stack lines as a second argument. Takes no\n    return value (but the stack can be modified directly).\n  - `message`: if specified and is a function, return value is used as new\n    `.message` value upon get. Passed the property value of the property named\n    by key, and the existing message is passed as the second argument as an\n    array of lines (suitable for multi-line messages).\n\nReturns a constructor (Function) that can be used just like the regular Error\nconstructor.\n\n```javascript\nvar errorEx = require(&#x27;error-ex&#x27;);\n\nvar BasicError = errorEx();\n\nvar NamedError = errorEx(&#x27;NamedError&#x27;);\n\n// --\n\nvar AdvancedError = errorEx(&#x27;AdvancedError&#x27;, {\n\tfoo: {\n\t\tline: function (value, stack) {\n\t\t\tif (value) {\n\t\t\t\treturn &#x27;bar &#x27; + value;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t}\n}\n\nvar err = new AdvancedError(&#x27;hello, world&#x27;);\nerr.foo = &#x27;baz&#x27;;\nthrow err;\n\n/*\n\tAdvancedError: hello, world\n\t    bar baz\n\t    at tryReadme() (readme.js:20:1)\n*/\n```\n\n#### `errorEx.line(str)`\nCreates a stack line using a delimiter\n\n&gt; This is a helper function. It is to be used in lieu of writing a value object\n&gt; for `properties` values.\n\n- `str`: The string to create\n  - Use the delimiter `%s` to specify where in the string the value should go\n\n```javascript\nvar errorEx = require(&#x27;error-ex&#x27;);\n\nvar FileError = errorEx(&#x27;FileError&#x27;, {fileName: errorEx.line(&#x27;in %s&#x27;)});\n\nvar err = new FileError(&#x27;problem reading file&#x27;);\nerr.fileName = &#x27;/a/b/c/d/foo.js&#x27;;\nthrow err;\n\n/*\n\tFileError: problem reading file\n\t    in /a/b/c/d/foo.js\n\t    at tryReadme() (readme.js:7:1)\n*/\n```\n\n#### `errorEx.append(str)`\nAppends to the `error.message` string\n\n&gt; This is a helper function. It is to be used in lieu of writing a value object\n&gt; for `properties` values.\n\n- `str`: The string to append\n  - Use the delimiter `%s` to specify where in the string the value should go\n\n```javascript\nvar errorEx = require(&#x27;error-ex&#x27;);\n\nvar SyntaxError = errorEx(&#x27;SyntaxError&#x27;, {fileName: errorEx.append(&#x27;in %s&#x27;)});\n\nvar err = new SyntaxError(&#x27;improper indentation&#x27;);\nerr.fileName = &#x27;/a/b/c/d/foo.js&#x27;;\nthrow err;\n\n/*\n\tSyntaxError: improper indentation in /a/b/c/d/foo.js\n\t    at tryReadme() (readme.js:7:1)\n*/\n```\n\n## License\nLicensed under the [MIT License](http://opensource.org/licenses/MIT).\nYou can find a copy of it in [LICENSE](LICENSE).\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/qix-/node-error-ex#readme&quot;,
+  &quot;trustScore&quot;: 22,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 4,
+    &quot;dependent_repositories&quot;: 6,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 2,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: -1,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 22
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-25T21:16:59.317Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:07:29.897Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:08:39.849Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:26:38.364Z&quot;,
+      &quot;trustScore&quot;: 18,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.3&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:29:59.393Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.2.4&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:31:31.833Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T00:54:01.645Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.3.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T01:03:11.773Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T01:38:19.291Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T02:04:55.301Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T15:03:25.538Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T15:07:15.029Z&quot;,
+      &quot;trustScore&quot;: 24,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-26T16:33:30.185Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2015-11-04T15:21:01.765Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;is-arrayish&quot;,
+          &quot;version&quot;: &quot;^0.2.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.3.1&quot;,
+      &quot;timestamp&quot;: &quot;2017-03-03T23:25:39.450Z&quot;,
+      &quot;trustScore&quot;: 22,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;is-arrayish&quot;,
+          &quot;version&quot;: &quot;^0.2.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.3.2&quot;,
+      &quot;timestamp&quot;: &quot;2018-06-19T06:20:32.836Z&quot;,
+      &quot;trustScore&quot;: 23,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;is-arrayish&quot;,
+          &quot;version&quot;: &quot;^0.2.1&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb067f1a28b82fef5a67a95","id":"error-ex","crawlTimestamp":"14/11/2020 23:27:44","packageName":"error-ex","description":"Easy error subclassing and stack customization","repository":{"type":"git","url":"git+https://github.com/qix-/node-error-ex.git"},"readme":"# node-error-ex [![Travis-CI.org Build Status](https://img.shields.io/travis/Qix-/node-error-ex.svg?style=flat-square)](https://travis-ci.org/Qix-/node-error-ex) [![Coveralls.io Coverage Rating](https://img.shields.io/coveralls/Qix-/node-error-ex.svg?style=flat-square)](https://coveralls.io/r/Qix-/node-error-ex)\n\u003e Easily subclass and customize new Error types\n\n## Examples\nTo include in your project:\n```javascript\nvar errorEx = require('error-ex');\n```\n\nTo create an error message type with a specific name (note, that `ErrorFn.name`\nwill not reflect this):\n```javascript\nvar JSONError = errorEx('JSONError');\n\nvar err = new JSONError('error');\nerr.name; //-\u003e JSONError\nthrow err; //-\u003e JSONError: error\n```\n\nTo add a stack line:\n```javascript\nvar JSONError = errorEx('JSONError', {fileName: errorEx.line('in %s')});\n\nvar err = new JSONError('error')\nerr.fileName = '/a/b/c/foo.json';\nthrow err; //-\u003e (line 2)-\u003e in /a/b/c/foo.json\n```\n\nTo append to the error message:\n```javascript\nvar JSONError = errorEx('JSONError', {fileName: errorEx.append('in %s')});\n\nvar err = new JSONError('error');\nerr.fileName = '/a/b/c/foo.json';\nthrow err; //-\u003e JSONError: error in /a/b/c/foo.json\n```\n\n## API\n\n#### `errorEx([name], [properties])`\nCreates a new ErrorEx error type\n\n- `name`: the name of the new type (appears in the error message upon throw;\n  defaults to `Error.name`)\n- `properties`: if supplied, used as a key/value dictionary of properties to\n  use when building up the stack message. Keys are property names that are\n  looked up on the error message, and then passed to function values.\n\t- `line`: if specified and is a function, return value is added as a stack\n    entry (error-ex will indent for you). Passed the property value given\n    the key.\n  - `stack`: if specified and is a function, passed the value of the property\n    using the key, and the raw stack lines as a second argument. Takes no\n    return value (but the stack can be modified directly).\n  - `message`: if specified and is a function, return value is used as new\n    `.message` value upon get. Passed the property value of the property named\n    by key, and the existing message is passed as the second argument as an\n    array of lines (suitable for multi-line messages).\n\nReturns a constructor (Function) that can be used just like the regular Error\nconstructor.\n\n```javascript\nvar errorEx = require('error-ex');\n\nvar BasicError = errorEx();\n\nvar NamedError = errorEx('NamedError');\n\n// --\n\nvar AdvancedError = errorEx('AdvancedError', {\n\tfoo: {\n\t\tline: function (value, stack) {\n\t\t\tif (value) {\n\t\t\t\treturn 'bar ' + value;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n\t}\n}\n\nvar err = new AdvancedError('hello, world');\nerr.foo = 'baz';\nthrow err;\n\n/*\n\tAdvancedError: hello, world\n\t    bar baz\n\t    at tryReadme() (readme.js:20:1)\n*/\n```\n\n#### `errorEx.line(str)`\nCreates a stack line using a delimiter\n\n\u003e This is a helper function. It is to be used in lieu of writing a value object\n\u003e for `properties` values.\n\n- `str`: The string to create\n  - Use the delimiter `%s` to specify where in the string the value should go\n\n```javascript\nvar errorEx = require('error-ex');\n\nvar FileError = errorEx('FileError', {fileName: errorEx.line('in %s')});\n\nvar err = new FileError('problem reading file');\nerr.fileName = '/a/b/c/d/foo.js';\nthrow err;\n\n/*\n\tFileError: problem reading file\n\t    in /a/b/c/d/foo.js\n\t    at tryReadme() (readme.js:7:1)\n*/\n```\n\n#### `errorEx.append(str)`\nAppends to the `error.message` string\n\n\u003e This is a helper function. It is to be used in lieu of writing a value object\n\u003e for `properties` values.\n\n- `str`: The string to append\n  - Use the delimiter `%s` to specify where in the string the value should go\n\n```javascript\nvar errorEx = require('error-ex');\n\nvar SyntaxError = errorEx('SyntaxError', {fileName: errorEx.append('in %s')});\n\nvar err = new SyntaxError('improper indentation');\nerr.fileName = '/a/b/c/d/foo.js';\nthrow err;\n\n/*\n\tSyntaxError: improper indentation in /a/b/c/d/foo.js\n\t    at tryReadme() (readme.js:7:1)\n*/\n```\n\n## License\nLicensed under the [MIT License](http://opensource.org/licenses/MIT).\nYou can find a copy of it in [LICENSE](LICENSE).\n","homepage":"https://github.com/qix-/node-error-ex#readme","trustScore":22,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":4,"dependent_repositories":6,"stars":2,"contributors":1,"subscribers":2,"all_prereleases":0,"any_outdated_dependencies":-1,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":22},"versions":[{"versionNumber":"0.1.0","timestamp":"2015-08-25T21:16:59.317Z","trustScore":22,"dependencies":[]},{"versionNumber":"0.2.0","timestamp":"2015-08-26T00:07:29.897Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.2.1","timestamp":"2015-08-26T00:08:39.849Z","trustScore":24,"dependencies":[]},{"versionNumber":"0.2.2","timestamp":"2015-08-26T00:26:38.364Z","trustScore":18,"dependencies":[]},{"versionNumber":"0.2.3","timestamp":"2015-08-26T00:29:59.393Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.2.4","timestamp":"2015-08-26T00:31:31.833Z","trustScore":23,"dependencies":[]},{"versionNumber":"0.3.0","timestamp":"2015-08-26T00:54:01.645Z","trustScore":21,"dependencies":[]},{"versionNumber":"0.3.1","timestamp":"2015-08-26T01:03:11.773Z","trustScore":22,"dependencies":[]},{"versionNumber":"1.0.0","timestamp":"2015-08-26T01:38:19.291Z","trustScore":23,"dependencies":[]},{"versionNumber":"1.1.0","timestamp":"2015-08-26T02:04:55.301Z","trustScore":23,"dependencies":[]},{"versionNumber":"1.1.1","timestamp":"2015-08-26T15:03:25.538Z","trustScore":21,"dependencies":[]},{"versionNumber":"1.1.2","timestamp":"2015-08-26T15:07:15.029Z","trustScore":24,"dependencies":[]},{"versionNumber":"1.2.0","timestamp":"2015-08-26T16:33:30.185Z","trustScore":22,"dependencies":[]},{"versionNumber":"1.3.0","timestamp":"2015-11-04T15:21:01.765Z","trustScore":22,"dependencies":[{"packageName":"is-arrayish","version":"^0.2.1"}]},{"versionNumber":"1.3.1","timestamp":"2017-03-03T23:25:39.450Z","trustScore":22,"dependencies":[{"packageName":"is-arrayish","version":"^0.2.1"}]},{"versionNumber":"1.3.2","timestamp":"2018-06-19T06:20:32.836Z","trustScore":23,"dependencies":[{"packageName":"is-arrayish","version":"^0.2.1"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"error-ex"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

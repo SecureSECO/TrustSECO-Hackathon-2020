@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb05c2077b543d8a4c7df86&quot;,
+  &quot;id&quot;: &quot;fast-list&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 22:37:20&quot;,
+  &quot;packageName&quot;: &quot;fast-list&quot;,
+  &quot;description&quot;: &quot;A fast linked list (good for queues, stacks, etc.)&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/isaacs/fast-list.git&quot;
+  },
+  &quot;readme&quot;: &quot;# The Problem\n\nYou&#x27;ve got some thing where you need to push a bunch of stuff into a\nqueue and then shift it out.  Or, maybe, you need to pop it out\nstack-like, but it&#x27;s not clear at the outset which way it&#x27;s going to go.\n\nArrays work for this, but are a bit costly performance-wise in the mixed\ncase.  In the pure-stack case (or, as of recent V8 versions, the pure-queue\ncase as well), Arrays are best.\n\nIn cases where it&#x27;s mixed, a linked list implementation can be\nsignificantly faster.  See the benchmark scripts in `bench/*.js` to\nmeasure the differences.\n\nThis lacks a lot of features that arrays have:\n\n1. You can&#x27;t specify the size at the outset.\n2. It&#x27;s not indexable.\n3. There&#x27;s no join, concat, etc.\n\nIf any of this matters for your use case, you&#x27;re probably better off\nusing an Array object.\n\nIf you *know* that you&#x27;ll be using it as a stack or a queue exclusively,\nthen you&#x27;re better off using an Array object.\n\nIf you know the eventual size at the offset, then you&#x27;re definitely\nbetter off using an Array.\n\n## Installing\n\n```\nnpm install fast-list\n```\n\n## API\n\n```javascript\nvar FastList = require(\&quot;fast-list\&quot;)\nvar list = new FastList()\nlist.push(\&quot;foo\&quot;)\nlist.unshift(\&quot;bar\&quot;)\nlist.push(\&quot;baz\&quot;)\nconsole.log(list.length) // 2\nconsole.log(list.pop()) // baz\nconsole.log(list.shift()) // bar\nconsole.log(list.shift()) // foo\n```\n\n### Methods\n\n* `push`: Just like Array.push, but only can take a single entry\n* `pop`: Just like Array.pop.  Note: if you&#x27;re only using push and pop,\n  then you have a stack, and Arrays are better for that.\n* `shift`: Just like Array.shift.  Note: if you&#x27;re only using push and\n  shift, then you have a queue, and Arrays are better for that.\n* `unshift`: Just like Array.unshift, but only can take a single entry.\n* `drop`: Drop all entries\n* `item(n)`: Retrieve the nth item in the list.  This involves a walk\n  every time.  It&#x27;s very slow.  If you find yourself using this,\n  consider using a normal Array instead.\n* `map(fn, thisp)`: Like `Array.prototype.map`.  Returns a new FastList.\n* `reduce(fn, startValue, thisp)`: Like `Array.prototype.reduce`\n* `forEach(fn, this)`: Like `Array.prototype.forEach`\n* `filter(fn, thisp)`: Like `Array.prototype.filter`. Returns a new\n  FastList.\n* `slice(start, end)`: Retrieve an array of the items at this position.\n  This involves a walk every time.  It&#x27;s very slow.  If you find\n  yourself using this, consider using a normal Array instead.\n\n### Members\n\n* `length`: The number of things in the list.  Note that, unlike\n  Array.length, this is not a getter/setter, but rather a counter that\n  is internally managed.  Setting it can only cause harm.\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/isaacs/fast-list#readme&quot;,
+  &quot;trustScore&quot;: 14,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 2,
+    &quot;dependent_repositories&quot;: 2,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 0,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 14
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2011-11-22T02:34:23.810Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2011-11-23T00:45:44.767Z&quot;,
+      &quot;trustScore&quot;: 14,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-01-04T20:44:43.032Z&quot;,
+      &quot;trustScore&quot;: 15,
+      &quot;dependencies&quot;: []
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2015-06-01T04:10:56.038Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: []
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb05c2077b543d8a4c7df86","id":"fast-list","crawlTimestamp":"14/11/2020 22:37:20","packageName":"fast-list","description":"A fast linked list (good for queues, stacks, etc.)","repository":{"type":"git","url":"git://github.com/isaacs/fast-list.git"},"readme":"# The Problem\n\nYou've got some thing where you need to push a bunch of stuff into a\nqueue and then shift it out.  Or, maybe, you need to pop it out\nstack-like, but it's not clear at the outset which way it's going to go.\n\nArrays work for this, but are a bit costly performance-wise in the mixed\ncase.  In the pure-stack case (or, as of recent V8 versions, the pure-queue\ncase as well), Arrays are best.\n\nIn cases where it's mixed, a linked list implementation can be\nsignificantly faster.  See the benchmark scripts in `bench/*.js` to\nmeasure the differences.\n\nThis lacks a lot of features that arrays have:\n\n1. You can't specify the size at the outset.\n2. It's not indexable.\n3. There's no join, concat, etc.\n\nIf any of this matters for your use case, you're probably better off\nusing an Array object.\n\nIf you *know* that you'll be using it as a stack or a queue exclusively,\nthen you're better off using an Array object.\n\nIf you know the eventual size at the offset, then you're definitely\nbetter off using an Array.\n\n## Installing\n\n```\nnpm install fast-list\n```\n\n## API\n\n```javascript\nvar FastList = require(\"fast-list\")\nvar list = new FastList()\nlist.push(\"foo\")\nlist.unshift(\"bar\")\nlist.push(\"baz\")\nconsole.log(list.length) // 2\nconsole.log(list.pop()) // baz\nconsole.log(list.shift()) // bar\nconsole.log(list.shift()) // foo\n```\n\n### Methods\n\n* `push`: Just like Array.push, but only can take a single entry\n* `pop`: Just like Array.pop.  Note: if you're only using push and pop,\n  then you have a stack, and Arrays are better for that.\n* `shift`: Just like Array.shift.  Note: if you're only using push and\n  shift, then you have a queue, and Arrays are better for that.\n* `unshift`: Just like Array.unshift, but only can take a single entry.\n* `drop`: Drop all entries\n* `item(n)`: Retrieve the nth item in the list.  This involves a walk\n  every time.  It's very slow.  If you find yourself using this,\n  consider using a normal Array instead.\n* `map(fn, thisp)`: Like `Array.prototype.map`.  Returns a new FastList.\n* `reduce(fn, startValue, thisp)`: Like `Array.prototype.reduce`\n* `forEach(fn, this)`: Like `Array.prototype.forEach`\n* `filter(fn, thisp)`: Like `Array.prototype.filter`. Returns a new\n  FastList.\n* `slice(start, end)`: Retrieve an array of the items at this position.\n  This involves a walk every time.  It's very slow.  If you find\n  yourself using this, consider using a normal Array instead.\n\n### Members\n\n* `length`: The number of things in the list.  Note that, unlike\n  Array.length, this is not a getter/setter, but rather a counter that\n  is internally managed.  Setting it can only cause harm.\n","homepage":"https://github.com/isaacs/fast-list#readme","trustScore":14,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":2,"dependent_repositories":2,"stars":2,"contributors":0,"subscribers":0,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":14},"versions":[{"versionNumber":"1.0.0","timestamp":"2011-11-22T02:34:23.810Z","trustScore":14,"dependencies":[]},{"versionNumber":"1.0.1","timestamp":"2011-11-23T00:45:44.767Z","trustScore":14,"dependencies":[]},{"versionNumber":"1.0.2","timestamp":"2012-01-04T20:44:43.032Z","trustScore":15,"dependencies":[]},{"versionNumber":"1.0.3","timestamp":"2015-06-01T04:10:56.038Z","trustScore":13,"dependencies":[]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"fast-list"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

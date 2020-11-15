@@ -1,0 +1,203 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb0685ca28b82fef5a67ae9&quot;,
+  &quot;id&quot;: &quot;ref-struct&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:29:31&quot;,
+  &quot;packageName&quot;: &quot;ref-struct&quot;,
+  &quot;description&quot;: &quot;Create ABI-compliant \&quot;struct\&quot; instances on top of Buffers&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git://github.com/TooTallNate/ref-struct.git&quot;
+  },
+  &quot;readme&quot;: &quot;ref-struct\n==========\n### Create ABI-compliant \&quot;[struct][]\&quot; instances on top of Buffers\n[![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.svg)](https://travis-ci.org/TooTallNate/ref-struct)\n[![Build Status](https://ci.appveyor.com/api/projects/status/6v4h5v5kh9kmtke8?svg=true)](https://ci.appveyor.com/project/TooTallNate/ref-struct)\n\n\nThis module offers a \&quot;struct\&quot; implementation on top of Node.js Buffers\nusing the ref \&quot;type\&quot; interface.\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install ref-struct\n```\n\n\nExamples\n--------\n\nSay you wanted to emulate the `timeval` struct from the stdlib:\n\n``` c\nstruct timeval {\n  time_t       tv_sec;   /* seconds since Jan. 1, 1970 */\n  suseconds_t  tv_usec;  /* and microseconds */\n};\n```\n\n``` js\nvar ref = require(&#x27;ref&#x27;)\nvar StructType = require(&#x27;ref-struct&#x27;)\n\n// define the time types\nvar time_t = ref.types.long\nvar suseconds_t = ref.types.long\n\n// define the \&quot;timeval\&quot; struct type\nvar timeval = StructType({\n  tv_sec: time_t,\n  tv_usec: suseconds_t\n})\n\n// now we can create instances of it\nvar tv = new timeval\n```\n\n#### With `node-ffi`\n\nThis gets very powerful when combined with `node-ffi` to invoke C functions:\n\n``` js\nvar ffi = require(&#x27;ffi&#x27;)\n\nvar tv = new timeval\ngettimeofday(tv.ref(), null)\n```\n\n#### Progressive API\n\nYou can build up a Struct \&quot;type\&quot; incrementally (useful when interacting with a\nparser) using the `defineProperty()` function. But as soon as you _create_ an\ninstance of the struct type, then the struct type is finalized, and no more\nproperties may be added to it.\n\n``` js\nvar ref = require(&#x27;ref&#x27;)\nvar StructType = require(&#x27;ref-struct&#x27;)\n\nvar MyStruct = StructType()\nMyStruct.defineProperty(&#x27;width&#x27;, ref.types.int)\nMyStruct.defineProperty(&#x27;height&#x27;, ref.types.int)\n\nvar i = new MyStruct({ width: 5, height: 10 })\n\nMyStruct.defineProperty(&#x27;weight&#x27;, ref.types.int)\n// AssertionError: an instance of this Struct type has already been created, cannot add new \&quot;fields\&quot; anymore\n//      at Function.defineProperty (/Users/nrajlich/ref-struct/lib/struct.js:180:3)\n```\n\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2012 Nathan Rajlich &amp;lt;nathan@tootallnate.net&amp;gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n&#x27;Software&#x27;), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED &#x27;AS IS&#x27;, WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[struct]: http://wikipedia.org/wiki/Struct_(C_programming_language)\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/TooTallNate/ref-struct#readme&quot;,
+  &quot;trustScore&quot;: 18,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 4,
+    &quot;dependent_repositories&quot;: 3,
+    &quot;stars&quot;: 2,
+    &quot;contributors&quot;: 1,
+    &quot;subscribers&quot;: 1,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: -1,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 18
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;0.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2012-05-10T00:27:17.607Z&quot;,
+      &quot;trustScore&quot;: 17,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;*&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2012-05-16T18:03:30.779Z&quot;,
+      &quot;trustScore&quot;: 17,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;*&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2012-06-01T18:11:51.328Z&quot;,
+      &quot;trustScore&quot;: 16,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;*&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2012-09-26T20:38:28.634Z&quot;,
+      &quot;trustScore&quot;: 20,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;*&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.5&quot;,
+      &quot;timestamp&quot;: &quot;2013-01-25T02:39:03.696Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;*&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.6&quot;,
+      &quot;timestamp&quot;: &quot;2014-06-20T03:55:16.243Z&quot;,
+      &quot;trustScore&quot;: 20,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;~1.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;~0.3.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;0.0.7&quot;,
+      &quot;timestamp&quot;: &quot;2014-11-03T21:59:41.471Z&quot;,
+      &quot;trustScore&quot;: 18,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;~0.3.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2014-11-03T22:18:37.082Z&quot;,
+      &quot;trustScore&quot;: 17,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;~0.3.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2015-03-24T20:41:40.781Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2015-08-27T20:44:14.198Z&quot;,
+      &quot;trustScore&quot;: 19,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2016-08-03T04:26:41.529Z&quot;,
+      &quot;trustScore&quot;: 21,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;debug&quot;,
+          &quot;version&quot;: &quot;2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;ref&quot;,
+          &quot;version&quot;: &quot;1&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb0685ca28b82fef5a67ae9","id":"ref-struct","crawlTimestamp":"14/11/2020 23:29:31","packageName":"ref-struct","description":"Create ABI-compliant \"struct\" instances on top of Buffers","repository":{"type":"git","url":"git://github.com/TooTallNate/ref-struct.git"},"readme":"ref-struct\n==========\n### Create ABI-compliant \"[struct][]\" instances on top of Buffers\n[![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.svg)](https://travis-ci.org/TooTallNate/ref-struct)\n[![Build Status](https://ci.appveyor.com/api/projects/status/6v4h5v5kh9kmtke8?svg=true)](https://ci.appveyor.com/project/TooTallNate/ref-struct)\n\n\nThis module offers a \"struct\" implementation on top of Node.js Buffers\nusing the ref \"type\" interface.\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install ref-struct\n```\n\n\nExamples\n--------\n\nSay you wanted to emulate the `timeval` struct from the stdlib:\n\n``` c\nstruct timeval {\n  time_t       tv_sec;   /* seconds since Jan. 1, 1970 */\n  suseconds_t  tv_usec;  /* and microseconds */\n};\n```\n\n``` js\nvar ref = require('ref')\nvar StructType = require('ref-struct')\n\n// define the time types\nvar time_t = ref.types.long\nvar suseconds_t = ref.types.long\n\n// define the \"timeval\" struct type\nvar timeval = StructType({\n  tv_sec: time_t,\n  tv_usec: suseconds_t\n})\n\n// now we can create instances of it\nvar tv = new timeval\n```\n\n#### With `node-ffi`\n\nThis gets very powerful when combined with `node-ffi` to invoke C functions:\n\n``` js\nvar ffi = require('ffi')\n\nvar tv = new timeval\ngettimeofday(tv.ref(), null)\n```\n\n#### Progressive API\n\nYou can build up a Struct \"type\" incrementally (useful when interacting with a\nparser) using the `defineProperty()` function. But as soon as you _create_ an\ninstance of the struct type, then the struct type is finalized, and no more\nproperties may be added to it.\n\n``` js\nvar ref = require('ref')\nvar StructType = require('ref-struct')\n\nvar MyStruct = StructType()\nMyStruct.defineProperty('width', ref.types.int)\nMyStruct.defineProperty('height', ref.types.int)\n\nvar i = new MyStruct({ width: 5, height: 10 })\n\nMyStruct.defineProperty('weight', ref.types.int)\n// AssertionError: an instance of this Struct type has already been created, cannot add new \"fields\" anymore\n//      at Function.defineProperty (/Users/nrajlich/ref-struct/lib/struct.js:180:3)\n```\n\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2012 Nathan Rajlich \u0026lt;nathan@tootallnate.net\u0026gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n[struct]: http://wikipedia.org/wiki/Struct_(C_programming_language)\n","homepage":"https://github.com/TooTallNate/ref-struct#readme","trustScore":18,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":4,"dependent_repositories":3,"stars":2,"contributors":1,"subscribers":1,"all_prereleases":0,"any_outdated_dependencies":-1,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":18},"versions":[{"versionNumber":"0.0.1","timestamp":"2012-05-10T00:27:17.607Z","trustScore":17,"dependencies":[{"packageName":"debug","version":"*"},{"packageName":"ref","version":"0"}]},{"versionNumber":"0.0.2","timestamp":"2012-05-16T18:03:30.779Z","trustScore":17,"dependencies":[{"packageName":"debug","version":"*"},{"packageName":"ref","version":"0"}]},{"versionNumber":"0.0.3","timestamp":"2012-06-01T18:11:51.328Z","trustScore":16,"dependencies":[{"packageName":"debug","version":"*"},{"packageName":"ref","version":"0"}]},{"versionNumber":"0.0.4","timestamp":"2012-09-26T20:38:28.634Z","trustScore":20,"dependencies":[{"packageName":"debug","version":"*"},{"packageName":"ref","version":"0"}]},{"versionNumber":"0.0.5","timestamp":"2013-01-25T02:39:03.696Z","trustScore":19,"dependencies":[{"packageName":"debug","version":"*"},{"packageName":"ref","version":"0"}]},{"versionNumber":"0.0.6","timestamp":"2014-06-20T03:55:16.243Z","trustScore":20,"dependencies":[{"packageName":"debug","version":"~1.0.1"},{"packageName":"ref","version":"~0.3.2"}]},{"versionNumber":"0.0.7","timestamp":"2014-11-03T21:59:41.471Z","trustScore":18,"dependencies":[{"packageName":"debug","version":"2"},{"packageName":"ref","version":"~0.3.2"}]},{"versionNumber":"1.0.0","timestamp":"2014-11-03T22:18:37.082Z","trustScore":17,"dependencies":[{"packageName":"debug","version":"2"},{"packageName":"ref","version":"~0.3.2"}]},{"versionNumber":"1.0.1","timestamp":"2015-03-24T20:41:40.781Z","trustScore":19,"dependencies":[{"packageName":"debug","version":"2"},{"packageName":"ref","version":"1"}]},{"versionNumber":"1.0.2","timestamp":"2015-08-27T20:44:14.198Z","trustScore":19,"dependencies":[{"packageName":"debug","version":"2"},{"packageName":"ref","version":"1"}]},{"versionNumber":"1.1.0","timestamp":"2016-08-03T04:26:41.529Z","trustScore":21,"dependencies":[{"packageName":"debug","version":"2"},{"packageName":"ref","version":"1"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"ref-struct"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>

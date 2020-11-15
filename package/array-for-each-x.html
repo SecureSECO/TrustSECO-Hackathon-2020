@@ -1,0 +1,965 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="preload" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" as="style"/><link rel="stylesheet" href="/TrustSECO/_next/static/css/dd46eff8b0fa29b7c6a1.css" data-n-g=""/><noscript data-n-css="true"></noscript><link rel="preload" href="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" as="script"/><link rel="preload" href="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" as="script"/></head><body><div id="__next"><div><div></div><div></div><div>{
+  &quot;_id&quot;: &quot;5fb0672fa28b82fef5a67a06&quot;,
+  &quot;id&quot;: &quot;array-for-each-x&quot;,
+  &quot;crawlTimestamp&quot;: &quot;14/11/2020 23:24:29&quot;,
+  &quot;packageName&quot;: &quot;array-for-each-x&quot;,
+  &quot;description&quot;: &quot;Executes a provided function once for each array element.&quot;,
+  &quot;repository&quot;: {
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/Xotic750/array-for-each-x.git&quot;
+  },
+  &quot;readme&quot;: &quot;&lt;a\n  href=\&quot;https://travis-ci.org/Xotic750/array-for-each-x\&quot;\n  title=\&quot;Travis status\&quot;&gt;\n&lt;img\n  src=\&quot;https://travis-ci.org/Xotic750/array-for-each-x.svg?branch=master\&quot;\n  alt=\&quot;Travis status\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://david-dm.org/Xotic750/array-for-each-x\&quot;\n  title=\&quot;Dependency status\&quot;&gt;\n&lt;img src=\&quot;https://david-dm.org/Xotic750/array-for-each-x/status.svg\&quot;\n  alt=\&quot;Dependency status\&quot; height=\&quot;18\&quot;/&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://david-dm.org/Xotic750/array-for-each-x?type=dev\&quot;\n  title=\&quot;devDependency status\&quot;&gt;\n&lt;img src=\&quot;https://david-dm.org/Xotic750/array-for-each-x/dev-status.svg\&quot;\n  alt=\&quot;devDependency status\&quot; height=\&quot;18\&quot;/&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://badge.fury.io/js/array-for-each-x\&quot;\n  title=\&quot;npm version\&quot;&gt;\n&lt;img src=\&quot;https://badge.fury.io/js/array-for-each-x.svg\&quot;\n  alt=\&quot;npm version\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://www.jsdelivr.com/package/npm/array-for-each-x\&quot;\n  title=\&quot;jsDelivr hits\&quot;&gt;\n&lt;img src=\&quot;https://data.jsdelivr.com/v1/package/npm/array-for-each-x/badge?style=rounded\&quot;\n  alt=\&quot;jsDelivr hits\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://bettercodehub.com/results/Xotic750/array-for-each-x\&quot;\n  title=\&quot;bettercodehub score\&quot;&gt;\n&lt;img src=\&quot;https://bettercodehub.com/edge/badge/Xotic750/array-for-each-x?branch=master\&quot;\n  alt=\&quot;bettercodehub score\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n&lt;a\n  href=\&quot;https://coveralls.io/github/Xotic750/array-for-each-x?branch=master\&quot;\n  title=\&quot;Coverage Status\&quot;&gt;\n&lt;img src=\&quot;https://coveralls.io/repos/github/Xotic750/array-for-each-x/badge.svg?branch=master\&quot;\n  alt=\&quot;Coverage Status\&quot; height=\&quot;18\&quot;&gt;\n&lt;/a&gt;\n\n&lt;a name=\&quot;module_array-for-each-x\&quot;&gt;&lt;/a&gt;\n\n## array-for-each-x\n\nExecutes a provided function once for each array element.\n\n&lt;a name=\&quot;exp_module_array-for-each-x--module.exports\&quot;&gt;&lt;/a&gt;\n\n### `module.exports` ⏏\n\nThis method executes a provided function once for each array element.\n\n**Kind**: Exported member  \n**Throws**:\n\n- &lt;code&gt;TypeError&lt;/code&gt; If array is null or undefined.\n- &lt;code&gt;TypeError&lt;/code&gt; If callBack is not a function.\n\n| Param     | Type                  | Description                                   |\n| --------- | --------------------- | --------------------------------------------- |\n| array     | &lt;code&gt;array&lt;/code&gt;    | The array to iterate over.                    |\n| callBack  | &lt;code&gt;function&lt;/code&gt; | Function to execute for each element.         |\n| [thisArg] | &lt;code&gt;\\*&lt;/code&gt;       | Value to use as this when executing callback. |\n\n**Example**\n\n```js\nimport forEach from &#x27;array-for-each-x&#x27;;\n\nconst items = [&#x27;item1&#x27;, &#x27;item2&#x27;, &#x27;item3&#x27;];\nconst copy = [];\n\nforEach(items, function(item) {\n  copy.push(item);\n});\n\nconsole.log(copy); // [&#x27;item1&#x27;, &#x27;item2&#x27;, &#x27;item3&#x27;]\n```\n&quot;,
+  &quot;homepage&quot;: &quot;https://github.com/Xotic750/array-for-each-x&quot;,
+  &quot;trustScore&quot;: 11,
+  &quot;sourceRank&quot;: {
+    &quot;basic_info_present&quot;: 1,
+    &quot;repository_present&quot;: 1,
+    &quot;readme_present&quot;: 1,
+    &quot;license_present&quot;: 1,
+    &quot;versions_present&quot;: 1,
+    &quot;follows_semver&quot;: 1,
+    &quot;recent_release&quot;: 0,
+    &quot;not_brand_new&quot;: 1,
+    &quot;one_point_oh&quot;: 1,
+    &quot;dependent_projects&quot;: 2,
+    &quot;dependent_repositories&quot;: 1,
+    &quot;stars&quot;: 0,
+    &quot;contributors&quot;: 0,
+    &quot;subscribers&quot;: 0,
+    &quot;all_prereleases&quot;: 0,
+    &quot;any_outdated_dependencies&quot;: 0,
+    &quot;is_deprecated&quot;: 0,
+    &quot;is_unmaintained&quot;: 0,
+    &quot;is_removed&quot;: 0,
+    &quot;trustScore&quot;: 11
+  },
+  &quot;versions&quot;: [
+    {
+      &quot;versionNumber&quot;: &quot;1.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-08-09T00:28:28.171Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-some-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^1.3.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2017-08-10T00:25:30.845Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-some-x&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^1.3.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-08-11T21:49:33.085Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-some-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^1.5.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;1.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-08-15T18:14:14.077Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-some-x&quot;,
+          &quot;version&quot;: &quot;^1.3.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^1.5.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-09-06T06:36:07.646Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^2.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;validate.io-undefined&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-09-07T16:04:33.537Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^2.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;validate.io-undefined&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.2.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-09-08T13:57:14.861Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^2.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.4.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;validate.io-undefined&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;2.3.0&quot;,
+      &quot;timestamp&quot;: &quot;2017-11-10T08:44:28.665Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^1.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;cached-constructors-x&quot;,
+          &quot;version&quot;: &quot;^1.0.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^3.0.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^1.5.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;validate.io-undefined&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-15T12:32:48.765Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.1&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-15T13:14:40.713Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.1&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.2&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-16T10:56:34.746Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.5&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.5&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.2&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.3&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-16T12:35:39.283Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.5&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.6&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.5&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.3&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.4&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-16T21:44:34.615Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.6&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.7&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.6&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.4&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.6&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-17T17:40:55.607Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.6&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.7&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.8&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.8&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.6&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.7&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-17T18:47:58.322Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.7&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.8&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.9&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.9&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.7&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.8&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-17T19:12:36.129Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.7&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.8&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.9&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.10&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.7&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.9&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-17T23:59:08.483Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.8&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.9&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.10&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.11&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.8&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.10&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-18T18:51:57.651Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.9&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.11&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.12&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.13&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.10&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.11&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-19T22:00:50.084Z&quot;,
+      &quot;trustScore&quot;: 9,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.10&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.12&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.13&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.14&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.11&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.12&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-21T22:49:18.592Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.11&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.14&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.14&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.15&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.12&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.13&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-22T12:47:41.792Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.12&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.15&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.15&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.16&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.13&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.14&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-24T00:28:57.556Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.13&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.16&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.16&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.18&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.14&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.15&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-24T16:35:11.892Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.14&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.18&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.18&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.20&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.16&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.16&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-25T22:09:10.221Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.15&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.19&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.19&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.21&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.17&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.17&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-26T14:21:11.016Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.16&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.20&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.20&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.22&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.18&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.18&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-27T01:12:16.091Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.17&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.21&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.21&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.23&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.19&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.19&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-27T14:26:49.346Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.18&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.22&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.0.26&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.22&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.25&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.20&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.20&quot;,
+      &quot;timestamp&quot;: &quot;2019-07-31T22:32:00.232Z&quot;,
+      &quot;trustScore&quot;: 13,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.19&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.23&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.0.27&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;split-if-boxed-bug-x&quot;,
+          &quot;version&quot;: &quot;^2.0.23&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.0.25&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-length-x&quot;,
+          &quot;version&quot;: &quot;^4.0.26&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.21&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.21&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-05T18:37:14.655Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-all-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.19&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.23&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.0.27&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.0.25&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.21&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.0.22&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-05T21:37:08.150Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-all-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.0.19&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.0.23&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.0.27&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.0.25&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.0.21&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.0&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-14T15:14:15.664Z&quot;,
+      &quot;trustScore&quot;: 12,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-all-x&quot;,
+          &quot;version&quot;: &quot;^1.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.2.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.1&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-20T19:40:52.601Z&quot;,
+      &quot;trustScore&quot;: 10,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-all-x&quot;,
+          &quot;version&quot;: &quot;^1.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;simple-methodize-x&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.1.0&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.2.0&quot;
+        }
+      ]
+    },
+    {
+      &quot;versionNumber&quot;: &quot;3.1.2&quot;,
+      &quot;timestamp&quot;: &quot;2019-08-28T17:24:36.052Z&quot;,
+      &quot;trustScore&quot;: 11,
+      &quot;dependencies&quot;: [
+        {
+          &quot;packageName&quot;: &quot;array-all-x&quot;,
+          &quot;version&quot;: &quot;^1.1.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;assert-is-function-x&quot;,
+          &quot;version&quot;: &quot;^3.1.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;attempt-x&quot;,
+          &quot;version&quot;: &quot;^2.1.2&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;require-object-coercible-x&quot;,
+          &quot;version&quot;: &quot;^2.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;simple-call-x&quot;,
+          &quot;version&quot;: &quot;^1.0.3&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;simple-methodize-x&quot;,
+          &quot;version&quot;: &quot;^1.0.4&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-boolean-x&quot;,
+          &quot;version&quot;: &quot;^2.1.1&quot;
+        },
+        {
+          &quot;packageName&quot;: &quot;to-object-x&quot;,
+          &quot;version&quot;: &quot;^2.2.1&quot;
+        }
+      ]
+    }
+  ]
+}</div><a href="/TrustSECO">← Back to home</a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"_id":"5fb0672fa28b82fef5a67a06","id":"array-for-each-x","crawlTimestamp":"14/11/2020 23:24:29","packageName":"array-for-each-x","description":"Executes a provided function once for each array element.","repository":{"type":"git","url":"git+https://github.com/Xotic750/array-for-each-x.git"},"readme":"\u003ca\n  href=\"https://travis-ci.org/Xotic750/array-for-each-x\"\n  title=\"Travis status\"\u003e\n\u003cimg\n  src=\"https://travis-ci.org/Xotic750/array-for-each-x.svg?branch=master\"\n  alt=\"Travis status\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://david-dm.org/Xotic750/array-for-each-x\"\n  title=\"Dependency status\"\u003e\n\u003cimg src=\"https://david-dm.org/Xotic750/array-for-each-x/status.svg\"\n  alt=\"Dependency status\" height=\"18\"/\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://david-dm.org/Xotic750/array-for-each-x?type=dev\"\n  title=\"devDependency status\"\u003e\n\u003cimg src=\"https://david-dm.org/Xotic750/array-for-each-x/dev-status.svg\"\n  alt=\"devDependency status\" height=\"18\"/\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://badge.fury.io/js/array-for-each-x\"\n  title=\"npm version\"\u003e\n\u003cimg src=\"https://badge.fury.io/js/array-for-each-x.svg\"\n  alt=\"npm version\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://www.jsdelivr.com/package/npm/array-for-each-x\"\n  title=\"jsDelivr hits\"\u003e\n\u003cimg src=\"https://data.jsdelivr.com/v1/package/npm/array-for-each-x/badge?style=rounded\"\n  alt=\"jsDelivr hits\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://bettercodehub.com/results/Xotic750/array-for-each-x\"\n  title=\"bettercodehub score\"\u003e\n\u003cimg src=\"https://bettercodehub.com/edge/badge/Xotic750/array-for-each-x?branch=master\"\n  alt=\"bettercodehub score\" height=\"18\"\u003e\n\u003c/a\u003e\n\u003ca\n  href=\"https://coveralls.io/github/Xotic750/array-for-each-x?branch=master\"\n  title=\"Coverage Status\"\u003e\n\u003cimg src=\"https://coveralls.io/repos/github/Xotic750/array-for-each-x/badge.svg?branch=master\"\n  alt=\"Coverage Status\" height=\"18\"\u003e\n\u003c/a\u003e\n\n\u003ca name=\"module_array-for-each-x\"\u003e\u003c/a\u003e\n\n## array-for-each-x\n\nExecutes a provided function once for each array element.\n\n\u003ca name=\"exp_module_array-for-each-x--module.exports\"\u003e\u003c/a\u003e\n\n### `module.exports` ⏏\n\nThis method executes a provided function once for each array element.\n\n**Kind**: Exported member  \n**Throws**:\n\n- \u003ccode\u003eTypeError\u003c/code\u003e If array is null or undefined.\n- \u003ccode\u003eTypeError\u003c/code\u003e If callBack is not a function.\n\n| Param     | Type                  | Description                                   |\n| --------- | --------------------- | --------------------------------------------- |\n| array     | \u003ccode\u003earray\u003c/code\u003e    | The array to iterate over.                    |\n| callBack  | \u003ccode\u003efunction\u003c/code\u003e | Function to execute for each element.         |\n| [thisArg] | \u003ccode\u003e\\*\u003c/code\u003e       | Value to use as this when executing callback. |\n\n**Example**\n\n```js\nimport forEach from 'array-for-each-x';\n\nconst items = ['item1', 'item2', 'item3'];\nconst copy = [];\n\nforEach(items, function(item) {\n  copy.push(item);\n});\n\nconsole.log(copy); // ['item1', 'item2', 'item3']\n```\n","homepage":"https://github.com/Xotic750/array-for-each-x","trustScore":11,"sourceRank":{"basic_info_present":1,"repository_present":1,"readme_present":1,"license_present":1,"versions_present":1,"follows_semver":1,"recent_release":0,"not_brand_new":1,"one_point_oh":1,"dependent_projects":2,"dependent_repositories":1,"stars":0,"contributors":0,"subscribers":0,"all_prereleases":0,"any_outdated_dependencies":0,"is_deprecated":0,"is_unmaintained":0,"is_removed":0,"trustScore":11},"versions":[{"versionNumber":"1.0.0","timestamp":"2017-08-09T00:28:28.171Z","trustScore":11,"dependencies":[{"packageName":"array-some-x","version":"^1.0.2"},{"packageName":"assert-is-function-x","version":"^1.3.0"},{"packageName":"to-object-x","version":"^1.4.0"}]},{"versionNumber":"1.0.2","timestamp":"2017-08-10T00:25:30.845Z","trustScore":12,"dependencies":[{"packageName":"array-some-x","version":"^1.0.3"},{"packageName":"assert-is-function-x","version":"^1.3.0"},{"packageName":"to-object-x","version":"^1.4.0"}]},{"versionNumber":"1.1.0","timestamp":"2017-08-11T21:49:33.085Z","trustScore":11,"dependencies":[{"packageName":"array-some-x","version":"^1.1.0"},{"packageName":"assert-is-function-x","version":"^1.5.0"},{"packageName":"to-object-x","version":"^1.4.0"}]},{"versionNumber":"1.2.0","timestamp":"2017-08-15T18:14:14.077Z","trustScore":11,"dependencies":[{"packageName":"array-some-x","version":"^1.3.0"},{"packageName":"assert-is-function-x","version":"^1.5.0"},{"packageName":"to-object-x","version":"^1.4.0"}]},{"versionNumber":"2.0.0","timestamp":"2017-09-06T06:36:07.646Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^2.0.1"},{"packageName":"attempt-x","version":"^1.1.0"},{"packageName":"split-if-boxed-bug-x","version":"^1.0.0"},{"packageName":"to-length-x","version":"^2.1.0"},{"packageName":"to-object-x","version":"^1.4.1"},{"packageName":"validate.io-undefined","version":"^1.0.3"}]},{"versionNumber":"2.1.0","timestamp":"2017-09-07T16:04:33.537Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^2.0.1"},{"packageName":"attempt-x","version":"^1.1.0"},{"packageName":"split-if-boxed-bug-x","version":"^1.0.0"},{"packageName":"to-length-x","version":"^2.1.0"},{"packageName":"to-object-x","version":"^1.4.1"},{"packageName":"validate.io-undefined","version":"^1.0.3"}]},{"versionNumber":"2.2.0","timestamp":"2017-09-08T13:57:14.861Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^2.0.1"},{"packageName":"attempt-x","version":"^1.1.0"},{"packageName":"split-if-boxed-bug-x","version":"^1.0.0"},{"packageName":"to-length-x","version":"^2.1.0"},{"packageName":"to-object-x","version":"^1.4.1"},{"packageName":"validate.io-undefined","version":"^1.0.3"}]},{"versionNumber":"2.3.0","timestamp":"2017-11-10T08:44:28.665Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^2.1.0"},{"packageName":"attempt-x","version":"^1.1.1"},{"packageName":"cached-constructors-x","version":"^1.0.0"},{"packageName":"split-if-boxed-bug-x","version":"^1.1.0"},{"packageName":"to-length-x","version":"^3.0.0"},{"packageName":"to-object-x","version":"^1.5.0"},{"packageName":"validate.io-undefined","version":"^1.0.3"}]},{"versionNumber":"3.0.0","timestamp":"2019-07-15T12:32:48.765Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.1"},{"packageName":"attempt-x","version":"^2.0.4"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.4"},{"packageName":"to-length-x","version":"^4.0.2"},{"packageName":"to-object-x","version":"^2.0.1"}]},{"versionNumber":"3.0.1","timestamp":"2019-07-15T13:14:40.713Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.1"},{"packageName":"attempt-x","version":"^2.0.4"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.4"},{"packageName":"to-length-x","version":"^4.0.3"},{"packageName":"to-object-x","version":"^2.0.1"}]},{"versionNumber":"3.0.2","timestamp":"2019-07-16T10:56:34.746Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.2"},{"packageName":"attempt-x","version":"^2.0.5"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.5"},{"packageName":"to-length-x","version":"^4.0.4"},{"packageName":"to-object-x","version":"^2.0.2"}]},{"versionNumber":"3.0.3","timestamp":"2019-07-16T12:35:39.283Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.3"},{"packageName":"attempt-x","version":"^2.0.5"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.6"},{"packageName":"to-length-x","version":"^4.0.5"},{"packageName":"to-object-x","version":"^2.0.3"}]},{"versionNumber":"3.0.4","timestamp":"2019-07-16T21:44:34.615Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.4"},{"packageName":"attempt-x","version":"^2.0.6"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.7"},{"packageName":"to-length-x","version":"^4.0.6"},{"packageName":"to-object-x","version":"^2.0.4"}]},{"versionNumber":"3.0.6","timestamp":"2019-07-17T17:40:55.607Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.6"},{"packageName":"attempt-x","version":"^2.0.7"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.8"},{"packageName":"to-length-x","version":"^4.0.8"},{"packageName":"to-object-x","version":"^2.0.6"}]},{"versionNumber":"3.0.7","timestamp":"2019-07-17T18:47:58.322Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.7"},{"packageName":"attempt-x","version":"^2.0.8"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.9"},{"packageName":"to-length-x","version":"^4.0.9"},{"packageName":"to-object-x","version":"^2.0.7"}]},{"versionNumber":"3.0.8","timestamp":"2019-07-17T19:12:36.129Z","trustScore":13,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.7"},{"packageName":"attempt-x","version":"^2.0.8"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.9"},{"packageName":"to-length-x","version":"^4.0.10"},{"packageName":"to-object-x","version":"^2.0.7"}]},{"versionNumber":"3.0.9","timestamp":"2019-07-17T23:59:08.483Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.8"},{"packageName":"attempt-x","version":"^2.0.9"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.10"},{"packageName":"to-length-x","version":"^4.0.11"},{"packageName":"to-object-x","version":"^2.0.8"}]},{"versionNumber":"3.0.10","timestamp":"2019-07-18T18:51:57.651Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.9"},{"packageName":"attempt-x","version":"^2.0.11"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.12"},{"packageName":"to-length-x","version":"^4.0.13"},{"packageName":"to-object-x","version":"^2.0.10"}]},{"versionNumber":"3.0.11","timestamp":"2019-07-19T22:00:50.084Z","trustScore":9,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.10"},{"packageName":"attempt-x","version":"^2.0.12"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.13"},{"packageName":"to-length-x","version":"^4.0.14"},{"packageName":"to-object-x","version":"^2.0.11"}]},{"versionNumber":"3.0.12","timestamp":"2019-07-21T22:49:18.592Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.11"},{"packageName":"attempt-x","version":"^2.0.14"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.14"},{"packageName":"to-length-x","version":"^4.0.15"},{"packageName":"to-object-x","version":"^2.0.12"}]},{"versionNumber":"3.0.13","timestamp":"2019-07-22T12:47:41.792Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.12"},{"packageName":"attempt-x","version":"^2.0.15"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.15"},{"packageName":"to-length-x","version":"^4.0.16"},{"packageName":"to-object-x","version":"^2.0.13"}]},{"versionNumber":"3.0.14","timestamp":"2019-07-24T00:28:57.556Z","trustScore":13,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.13"},{"packageName":"attempt-x","version":"^2.0.16"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.16"},{"packageName":"to-length-x","version":"^4.0.18"},{"packageName":"to-object-x","version":"^2.0.14"}]},{"versionNumber":"3.0.15","timestamp":"2019-07-24T16:35:11.892Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.14"},{"packageName":"attempt-x","version":"^2.0.18"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.18"},{"packageName":"to-length-x","version":"^4.0.20"},{"packageName":"to-object-x","version":"^2.0.16"}]},{"versionNumber":"3.0.16","timestamp":"2019-07-25T22:09:10.221Z","trustScore":11,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.15"},{"packageName":"attempt-x","version":"^2.0.19"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.19"},{"packageName":"to-length-x","version":"^4.0.21"},{"packageName":"to-object-x","version":"^2.0.17"}]},{"versionNumber":"3.0.17","timestamp":"2019-07-26T14:21:11.016Z","trustScore":10,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.16"},{"packageName":"attempt-x","version":"^2.0.20"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.20"},{"packageName":"to-length-x","version":"^4.0.22"},{"packageName":"to-object-x","version":"^2.0.18"}]},{"versionNumber":"3.0.18","timestamp":"2019-07-27T01:12:16.091Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.17"},{"packageName":"attempt-x","version":"^2.0.21"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.21"},{"packageName":"to-length-x","version":"^4.0.23"},{"packageName":"to-object-x","version":"^2.0.19"}]},{"versionNumber":"3.0.19","timestamp":"2019-07-27T14:26:49.346Z","trustScore":12,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.18"},{"packageName":"attempt-x","version":"^2.0.22"},{"packageName":"require-object-coercible-x","version":"^2.0.26"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.22"},{"packageName":"to-length-x","version":"^4.0.25"},{"packageName":"to-object-x","version":"^2.0.20"}]},{"versionNumber":"3.0.20","timestamp":"2019-07-31T22:32:00.232Z","trustScore":13,"dependencies":[{"packageName":"assert-is-function-x","version":"^3.0.19"},{"packageName":"attempt-x","version":"^2.0.23"},{"packageName":"require-object-coercible-x","version":"^2.0.27"},{"packageName":"split-if-boxed-bug-x","version":"^2.0.23"},{"packageName":"to-boolean-x","version":"^2.0.25"},{"packageName":"to-length-x","version":"^4.0.26"},{"packageName":"to-object-x","version":"^2.0.21"}]},{"versionNumber":"3.0.21","timestamp":"2019-08-05T18:37:14.655Z","trustScore":10,"dependencies":[{"packageName":"array-all-x","version":"^1.0.2"},{"packageName":"assert-is-function-x","version":"^3.0.19"},{"packageName":"attempt-x","version":"^2.0.23"},{"packageName":"require-object-coercible-x","version":"^2.0.27"},{"packageName":"to-boolean-x","version":"^2.0.25"},{"packageName":"to-object-x","version":"^2.0.21"}]},{"versionNumber":"3.0.22","timestamp":"2019-08-05T21:37:08.150Z","trustScore":11,"dependencies":[{"packageName":"array-all-x","version":"^1.0.2"},{"packageName":"assert-is-function-x","version":"^3.0.19"},{"packageName":"attempt-x","version":"^2.0.23"},{"packageName":"require-object-coercible-x","version":"^2.0.27"},{"packageName":"to-boolean-x","version":"^2.0.25"},{"packageName":"to-object-x","version":"^2.0.21"}]},{"versionNumber":"3.1.0","timestamp":"2019-08-14T15:14:15.664Z","trustScore":12,"dependencies":[{"packageName":"array-all-x","version":"^1.1.0"},{"packageName":"assert-is-function-x","version":"^3.1.0"},{"packageName":"attempt-x","version":"^2.1.0"},{"packageName":"require-object-coercible-x","version":"^2.1.0"},{"packageName":"to-boolean-x","version":"^2.1.0"},{"packageName":"to-object-x","version":"^2.2.0"}]},{"versionNumber":"3.1.1","timestamp":"2019-08-20T19:40:52.601Z","trustScore":10,"dependencies":[{"packageName":"array-all-x","version":"^1.1.1"},{"packageName":"assert-is-function-x","version":"^3.1.1"},{"packageName":"attempt-x","version":"^2.1.1"},{"packageName":"require-object-coercible-x","version":"^2.1.0"},{"packageName":"simple-call-x","version":"^1.0.2"},{"packageName":"simple-methodize-x","version":"^1.0.3"},{"packageName":"to-boolean-x","version":"^2.1.0"},{"packageName":"to-object-x","version":"^2.2.0"}]},{"versionNumber":"3.1.2","timestamp":"2019-08-28T17:24:36.052Z","trustScore":11,"dependencies":[{"packageName":"array-all-x","version":"^1.1.2"},{"packageName":"assert-is-function-x","version":"^3.1.2"},{"packageName":"attempt-x","version":"^2.1.2"},{"packageName":"require-object-coercible-x","version":"^2.1.1"},{"packageName":"simple-call-x","version":"^1.0.3"},{"packageName":"simple-methodize-x","version":"^1.0.4"},{"packageName":"to-boolean-x","version":"^2.1.1"},{"packageName":"to-object-x","version":"^2.2.1"}]}]}},"__N_SSG":true},"page":"/package/[id]","query":{"id":"array-for-each-x"},"buildId":"U0rLYnK42KpVaa9mzsgMI","assetPrefix":"/TrustSECO","nextExport":false,"isFallback":false,"gsp":true,"head":[["meta",{"charSet":"utf-8"}],["meta",{"name":"viewport","content":"width=device-width"}]]}</script><script nomodule="" src="/TrustSECO/_next/static/chunks/polyfills-11c8eba6a84e3fddec04.js"></script><script src="/TrustSECO/_next/static/chunks/main-06c1dcca274dd3ebd367.js" async=""></script><script src="/TrustSECO/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js" async=""></script><script src="/TrustSECO/_next/static/chunks/framework.490e6e89fb7343c23de5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/commons.e12371422b04e39d225f.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/_app-6332075865a73fbac0f6.js" async=""></script><script src="/TrustSECO/_next/static/chunks/20d867a918a78c19a392d2ab3562d7e5efc3a8e7.30476f1fa72fd640a1d5.js" async=""></script><script src="/TrustSECO/_next/static/chunks/pages/package/%5Bid%5D-57905688bbc4a104fe28.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_buildManifest.js" async=""></script><script src="/TrustSECO/_next/static/U0rLYnK42KpVaa9mzsgMI/_ssgManifest.js" async=""></script></body></html>
