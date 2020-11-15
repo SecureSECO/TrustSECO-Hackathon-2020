@@ -52,7 +52,7 @@ export default function Package({ postData }) {
                             </Card.Text>
                           </Card.Body>
                         </Card>
-                        {/* <Card>
+                        <Card>
                           <Card.Header>Package versions</Card.Header>
                           <Card.Body>
                             <Card.Text>
@@ -165,7 +165,7 @@ export default function Package({ postData }) {
                               </div>
                             </Card.Text>
                           </Card.Body>
-                        </Card> */}
+                        </Card>
                       </Col>
                     </Row>
                     <Row>
