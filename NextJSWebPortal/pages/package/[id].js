@@ -68,7 +68,7 @@ export default function Package({ postData }) {
                     <Col md={4}>
                       <Card>
                         <Card.Body>
-                          <Link href="secureseco">
+                          <Link href="https://secureseco.github.io/Votingsystem/#/">
                             <a>Vote score</a>
                           </Link>
                         </Card.Body>{" "}
