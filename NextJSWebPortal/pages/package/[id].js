@@ -11,7 +11,7 @@ import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
 
 export default function Package({ postData }) {
   try {
-    if (postData) {
+    if (postData && postData.packageName != null) {
       return (
         <div className={styles.wrapper}>
           <div className={styles.container}>
