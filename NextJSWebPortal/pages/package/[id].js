@@ -11,7 +11,11 @@ import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
 
 export default function Package({ postData }) {
   try {
-    if (postData && postData.packageName != null) {
+    if (
+      postData &&
+      postData.packageName != null &&
+      postData.repository.url != null
+    ) {
       return (
         <div className={styles.wrapper}>
           <div className={styles.container}>
@@ -48,7 +52,7 @@ export default function Package({ postData }) {
                             </Card.Text>
                           </Card.Body>
                         </Card>
-                        <Card>
+                        {/* <Card>
                           <Card.Header>Package versions</Card.Header>
                           <Card.Body>
                             <Card.Text>
@@ -161,7 +165,7 @@ export default function Package({ postData }) {
                               </div>
                             </Card.Text>
                           </Card.Body>
-                        </Card>
+                        </Card> */}
                       </Col>
                     </Row>
                     <Row>
