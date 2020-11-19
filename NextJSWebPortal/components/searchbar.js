@@ -65,7 +65,9 @@ export default class Searchbar extends React.Component {
   }
   handleSubmit = () => {
     if (this.state.value) {
-      window.location = `${window.location.hostname}/TrustSECO/package/${this.state.value.toLowerCase()}`;
+      window.location.href = `${
+        window.location.hostname
+      }/TrustSECO/package/${this.state.value.toLowerCase()}`;
     }
   };
 
