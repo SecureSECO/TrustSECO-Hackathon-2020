@@ -6,9 +6,10 @@ export default async (req, res) => {
   const packages = await db
     .collection("SecureSECO-collection")
     .find({})
-    .sort({ trustScore: -1 })
-    .limit(20)
+    .sort()
+    .limit(2000)
     .toArray();
 
   res.json(packages);
+  // console.log(res.json(packages).length);
 };
