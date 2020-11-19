@@ -1,5 +1,5 @@
 // import data from "../testData/data.json";
-import data from "../testData/crawledData.json";
+import data from "../testData/crawledCleanData.json";
 
 export function getAllPackageIds() {
   let paths = data.slice().map((record) => {
@@ -19,7 +19,7 @@ export function getAllPackageNames() {
 }
 
 export function getFeaturedData() {
-  return data.slice(4, 9);
+  return data.slice(0, 5);
 }
 export function getPackageData(id) {
   for (let i = 0; i < data.length; i++) {
